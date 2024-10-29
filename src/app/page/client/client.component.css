@@ -1,0 +1,124 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden; /* Evitar cualquier desbordamiento horizontal */
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: row; /* Dirección en fila */
+    margin-top: 60px;
+    min-height: calc(100vh - 60px - 100px); /* Ajustar altura para incluir el pie de página */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: rgb(29, 29, 29);
+    padding: 20px;
+    width: 300px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar .search-title {
+    margin-bottom: 10px;
+}
+
+/* Entradas */
+.sidebar input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+/* Botones */
+.sidebar .action-button,
+.sidebar .send-email-button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Cilíndrico */
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.sidebar .action-button {
+    background: linear-gradient(145deg, #2980b9, #3498db); /* Azul metalizado */
+}
+
+.sidebar .action-button:hover {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+}
+
+.sidebar .send-email-button {
+    background: linear-gradient(145deg, #27ae60, #2ecc71); /* Verde metalizado */
+}
+
+.sidebar .send-email-button:hover {
+    background: linear-gradient(145deg, #2ecc71, #27ae60);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative; /* Cambiar a relativo */
+}
+
+/* Contenido Principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #262627;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    min-height: calc(100vh - 60px - 100px); /* Ajustar altura para evitar que se sobreponga al footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        height: auto; /* Ajustar altura para móviles */
+    }
+    
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .footer {
+        position: relative; /* Cambiar a relativo para evitar problemas en pantallas pequeñas */
+    }
+}

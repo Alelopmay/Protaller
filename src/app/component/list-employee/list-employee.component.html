@@ -1,0 +1,29 @@
+<div class="employee-list-container">
+  <h1>Lista de Empleados</h1>
+  <ul class="employee-list">
+    <li *ngFor="let employee of employees" class="employee-item">
+      <div class="employee-details">
+        <!-- Mostrar la imagen si está disponible -->
+        <img *ngIf="employee.photo" [src]="employee.photo" alt="{{ employee.firstName }} {{ employee.lastName }}"
+          class="employee-photo">
+        <!-- En caso de que no haya foto, mostrar un marcador de posición -->
+        <img *ngIf="!employee.photo" src="assets/placeholder.jpg" alt="Foto no disponible" class="employee-photo">
+
+        <div class="employee-info">
+          <h3>{{ employee.firstName }} {{ employee.lastName }}</h3>
+          <p><strong>Nombre de usuario:</strong> {{ employee.username }}</p>
+          <p><strong>Categoría:</strong> {{ employee.role || 'No asignada' }}</p>
+        </div>
+      </div>
+
+      <div class="employee-actions">
+        <button class="action-button chat-button" (click)="onChat(employee)">Chatear</button>
+        <button class="action-button delete-button" (click)="onDelete(employee.id)">Eliminar</button>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="employees.length === 0" class="no-employees">
+    {{ noEmployeesMessage }}
+  </div>
+</div>

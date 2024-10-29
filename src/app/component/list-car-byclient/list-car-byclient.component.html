@@ -1,0 +1,52 @@
+<div class="car-list-container">
+    <h2 class="car-list-title">Coches del Cliente</h2>
+
+    <div *ngIf="cars.length > 0; else noCarsFound">
+        <div class="car-card" *ngFor="let car of cars">
+            <h3 class="car-title">{{ car.model }} - {{ car.licensePlate }}</h3>
+            <p><strong>Estado del coche:</strong> {{ car.carCondition }}</p>
+            <p><strong>ID del cliente:</strong> {{ car.clientId }}</p>
+
+            <!-- Botones para ver informes y ver facturas -->
+            <div class="car-actions">
+                <button class="btn btn-form" (click)="viewReports(car.licensePlate)">Ver Informes</button>
+                <button class="btn btn-invoice" (click)="viewInvoices(car.licensePlate)">Ver Facturas</button>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #noCarsFound>
+        <p class="no-cars-message">No se encontraron coches para este cliente.</p>
+    </ng-template>
+
+    <!-- Sección para mostrar facturas -->
+    <div *ngIf="showInvoices" class="invoice-section">
+        <h3>Facturas del Coche</h3>
+        <ul>
+            <li *ngFor="let invoice of selectedInvoices">
+               
+                <p><strong>Subtotal:</strong> {{ invoice.subtotal | currency }}</p>
+                <p><strong>Fecha de emisión:</strong> {{ invoice.issueDate | date:'dd/MM/yyyy' }}</p>
+                <p><strong>IVA:</strong> {{ invoice.vat | currency }}</p>
+                <p><strong>Total:</strong> {{ invoice.total | currency }}</p>
+                <p><strong>Método de pago:</strong> {{ invoice.paymentMethod }}</p>
+                <p><strong>Garantía:</strong> {{ invoice.warranty }}</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Sección para mostrar informes -->
+    <div *ngIf="showForms" class="report-section">
+        <h3>Informes del Coche</h3>
+        <ul>
+            <li *ngFor="let form of selectedForms">
+                
+                <p><strong>Descripción:</strong> {{ form.description }}</p>
+                <p><strong>Fecha:</strong> {{ form.date | date:'dd/MM/yyyy' }}</p>
+                <p><strong>Diagnóstico inicial:</strong> {{ form.initialDiagnosis }}</p>
+                <p><strong>Resultados de la inspección:</strong> {{ form.inspectionResults }}</p>
+                <p><strong>Trabajo realizado:</strong> {{ form.workPerformed }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

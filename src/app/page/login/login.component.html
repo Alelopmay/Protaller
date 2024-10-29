@@ -1,0 +1,91 @@
+<div class="header-top">
+    <h1 class="app-title">Protaller</h1>
+</div>
+
+<div class="login-container">
+    <div class="header">
+        <h1>Únete a nosotros para empezar a trabajar</h1>
+    </div>
+
+    <div class="login-content">
+        <div class="login-left">
+            <img src="/assets/fotos/log.png" alt="Imagen Taller" class="login-image">
+        </div>
+
+        <div class="login-right">
+            <h2>Iniciar sesión</h2>
+
+            <!-- Mostrar el mensaje aquí -->
+            <div *ngIf="isMessageVisible" class="alert alert-info mt-3">
+                {{ message }}
+            </div>
+
+            <form *ngIf="!showEmployeeForm" (ngSubmit)="login()">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username"
+                        placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password"
+                        placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+            </form>
+
+            <div *ngIf="adminMissing" class="alert alert-warning mt-3">
+                No tienes administrador para la empresa.
+                <button (click)="showEmployeeForm = true" class="btn btn-link">Crea uno aquí</button>
+            </div>
+
+            <div class="create-company">
+                <p>¿No tienes empresa? <a (click)="navigateToRegistration()" class="create-link">¡Créala ya!</a></p>
+            </div>
+            <div class="create-company">
+                <p>no me interesa, <a (click)="navigateToHome()" class="create-link">volver</a></p>
+            </div>
+
+
+            <form *ngIf="showEmployeeForm" (ngSubmit)="createEmployee()">
+                <h3>Datos del Empleado</h3>
+                <div class="form-group">
+                    <label for="employeeFirstName">Nombre del Empleado</label>
+                    <input type="text" class="form-control" id="employeeFirstName" [(ngModel)]="employee.firstName"
+                        name="employeeFirstName" placeholder="Ingresa el nombre del empleado" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeLastName">Apellido del Empleado</label>
+                    <input type="text" class="form-control" id="employeeLastName" [(ngModel)]="employee.lastName"
+                        name="employeeLastName" placeholder="Ingresa el apellido del empleado" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeeUsername">Usuario del Empleado</label>
+                    <input type="text" class="form-control" id="employeeUsername" [(ngModel)]="employee.username"
+                        name="employeeUsername" placeholder="Ingresa el nombre de usuario del empleado" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeePassword">Contraseña del Empleado</label>
+                    <input type="password" class="form-control" id="employeePassword" [(ngModel)]="employee.password"
+                        name="employeePassword" placeholder="Ingresa la contraseña del empleado" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Nombre de la Empresa</label>
+                    <input type="text" class="form-control" id="companyName" [(ngModel)]="companyName"
+                        name="companyName" placeholder="Ingresa el nombre de la empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyPassword">Contraseña de la Empresa</label>
+                    <input type="password" class="form-control" id="companyPassword" [(ngModel)]="companyPassword"
+                        name="companyPassword" placeholder="Ingresa la contraseña de la empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="employeePhoto">Foto del Empleado</label>
+                    <input type="file" class="form-control" id="employeePhoto" (change)="onFileSelected($event)"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Crear Empleado</button>
+            </form>
+        </div>
+    </div>
+</div>

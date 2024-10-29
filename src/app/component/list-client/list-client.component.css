@@ -1,0 +1,266 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden; /* Evitar cualquier desbordamiento horizontal */
+}
+
+/* Container */
+.container {
+    background-color: #2f2f2f; /* Fondo gris metalizado oscuro */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    max-width: calc(100% - 40px); /* Ancho ajustable */
+    margin: 40px auto; /* Centrar el contenedor */
+}
+
+/* Estilos para la lista de clientes */
+.client-list-container {
+    position: relative; /* Posición relativa para el contenedor */
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+/* Estilos para el contenedor de la lista de clientes */
+.client-list {
+    height: 500px; /* Aumentar la altura a 400px */
+    overflow-y: auto; /* Activa el desplazamiento vertical */
+    border: 1px solid #444; /* Borde para visualización */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 20px; /* Margen superior */
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Parte interna de la lista de clientes */
+.client-list-inner {
+    display: flex; /* Usa flexbox para que el contenido se alinee correctamente */
+    flex-direction: column; /* Alineación vertical de las tarjetas */
+}
+
+/* Tarjetas de clientes */
+.client-card {
+    background: linear-gradient(135deg, #444444, #666666); /* Gradiente para el fondo */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #ffffff; /* Color del texto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    margin: 10px 0; /* Espacio entre las tarjetas */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+    flex: 1; /* Para permitir el crecimiento de las tarjetas */
+    display: flex; /* Flex para el contenido dentro de la tarjeta */
+    flex-direction: column; /* Dirección en columna */
+    width: calc(100% - 20px); /* Aumentar el ancho de las tarjetas */
+}
+
+/* Efecto al pasar el ratón sobre cada tarjeta */
+.client-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+}
+
+/* Estilos para los botones */
+.button-group {
+    margin-top: 15px; /* Margen superior para separación */
+    display: flex; /* Flex para botones */
+    justify-content: space-between; /* Espacio entre botones */
+}
+
+/* Estilos para los botones de cliente */
+.btn {
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Forma cilíndrica */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor a puntero */
+    transition: background 0.3s, transform 0.2s; /* Transición suave */
+    font-weight: bold; /* Negrita en el texto */
+    flex: 1; /* Los botones ocupan el mismo espacio */
+    margin: 0 5px; /* Espacio entre botones */
+}
+
+/* Efecto al pasar el ratón sobre los botones */
+.btn:hover {
+    transform: scale(1.05); /* Efecto de escalado */
+}
+
+/* Efectos al pasar el ratón para cada botón */
+.btn.delete {
+    background: linear-gradient(135deg, #f44336, #ef5350); /* Rojo metalizado */
+}
+
+.btn.delete:hover {
+    background: linear-gradient(135deg, #ef5350, #f44336); /* Rojo más claro al pasar el ratón */
+}
+
+.btn.list-cars {
+    background: linear-gradient(135deg, #2196f3, #64b5f6); /* Azul metalizado */
+}
+
+.btn.list-cars:hover {
+    background: linear-gradient(135deg, #64b5f6, #2196f3); /* Azul más claro al pasar el ratón */
+}
+
+/* Mensaje si no hay clientes */
+.no-clients {
+    text-align: center; /* Centrar texto */
+    color: #bbb; /* Color más claro para el texto */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .client-card {
+        padding: 15px; /* Menos padding en pantallas medianas */
+        width: calc(100% - 30px); /* Aumentar el ancho de las tarjetas */
+    }
+
+    .btn {
+        padding: 8px 15px; /* Menos padding en botones */
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    }
+}
+
+@media (max-width: 768px) {
+    .client-card {
+        width: calc(100% - 20px); /* Aumentar el ancho de las tarjetas en pantallas pequeñas */
+        flex-direction: column; /* Mantener la dirección de las tarjetas en columna */
+    }
+
+    .button-group {
+        flex-direction: column; /* Botones en columna */
+        align-items: stretch; /* Alinear botones a lo largo de toda la tarjeta */
+    }
+
+    .btn {
+        margin: 5px 0; /* Margen vertical entre botones */
+        width: 100%; /* Botones ocupan todo el ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Tamaño de fuente del título más pequeño */
+    }
+
+    .client-card {
+        padding: 10px; /* Menos padding en pantallas extra pequeñas */
+        width: calc(100% - 15px); /* Aumentar el ancho de las tarjetas */
+    }
+
+    .btn {
+        padding: 8px; /* Menos padding en botones */
+        font-size: 0.85rem; /* Tamaño de fuente más pequeño */
+    }
+
+    .no-clients {
+        font-size: 0.9rem; /* Texto más pequeño si no hay clientes */
+    }
+}
+
+/* Estilos del modal de coches */
+.car-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con mayor opacidad */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté siempre por encima del resto */
+    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada suave */
+}
+
+/* Animación de entrada del modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #1e1e1e; /* Fondo más oscuro para mejor contraste */
+    padding: 30px; /* Aumentar padding para más espacio interno */
+    border-radius: 12px; /* Bordes más suaves */
+    width: 60%; /* Aumentar el ancho del modal */
+    max-width: 800px; /* Aumentar el ancho máximo del modal */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    color: #fff; /* Texto en blanco */
+    animation: slideIn 0.4s ease-in-out; /* Animación de entrada suave */
+}
+
+/* Animación de entrada del contenido modal */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para la lista de coches */
+ul {
+    list-style-type: none; /* Eliminar viñetas de la lista */
+    padding: 0; /* Eliminar padding por defecto */
+    margin: 20px 0; /* Espacio arriba y abajo de la lista */
+    height: 300px; /* Aumentar altura del carrusel */
+    overflow-y: auto; /* Activar desplazamiento vertical */
+}
+
+/* Estilo para cada ítem de la lista de coches */
+li {
+    background-color: #2f2f2f; /* Fondo oscuro para los ítems */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espacio entre los ítems */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Estilos para el scrollbar */
+ul::-webkit-scrollbar {
+    width: 8px; /* Reduce el ancho de la barra de desplazamiento */
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1); /* Color muy tenue para el "pulgar", casi invisible */
+    border-radius: 10px; /* Bordes redondeados para un efecto más suave */
+    border: 2px solid rgba(0, 0, 0, 0); /* Bordes invisibles para dar la sensación de espacio alrededor */
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2); /* Al pasar el ratón, el pulgar será un poco más visible */
+}
+
+ul::-webkit-scrollbar-track {
+    background: transparent; /* Elimina el fondo del track para que parezca que no existe */
+}
+
+/* Botón de cerrar modal */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff4444; /* Color rojo para el botón de cerrar */
+    color: white; /* Color blanco del texto */
+    border: none; /* Sin bordes */
+    border-radius: 50%; /* Redondeado */
+    padding: 10px 15px; /* Tamaño del botón */
+    cursor: pointer; /* Cursor de puntero */
+    font-size: 1rem; /* Tamaño de fuente */
+    transition: background 0.3s; /* Transición de color */
+}
+
+/* Efecto hover para el botón de cerrar */
+.close-modal:hover {
+    background-color: #ff6666; /* Color más claro al pasar el ratón */
+}

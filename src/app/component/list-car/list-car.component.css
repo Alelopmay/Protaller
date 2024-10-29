@@ -1,0 +1,136 @@
+/* Contenedor principal del carrusel */
+.car-carousel {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+  height: 90vh; 
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  
+  /* Hacer la barra de desplazamiento invisible o sutil */
+  scrollbar-width: thin; /* En navegadores como Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent; /* Color sutil para la barra */
+}
+
+/* Personalización para la barra de desplazamiento en WebKit (Chrome, Safari) */
+.car-carousel::-webkit-scrollbar {
+  width: 8px; /* Ajusta el grosor de la barra de desplazamiento */
+}
+
+.car-carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2); /* Color tenue */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.car-carousel::-webkit-scrollbar-track {
+  background: transparent; /* Hace que el fondo de la barra sea invisible */
+}
+
+/* Fila de coches */
+.car-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+  justify-content: flex-start;
+  gap: 2mm;
+}
+
+/* Estilo de la tarjeta */
+.car-card {
+  width: 48%; /* Ajustar el ancho a menos del 50% para que quepan dos tarjetas en la fila */
+  padding: 10px;
+  min-height: 250px; /* Ajustar según necesites */
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(255, 255, 255, 0.1) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8), 0 6px 12px rgba(255, 255, 255, 0.2) inset;
+}
+
+/* Imagen dentro de la tarjeta */
+.car-image {
+  width: 100%;              /* Asegúrate de que ocupe el 100% del contenedor de la tarjeta */
+  height: 140px;           /* Mantén la altura como está */
+  object-fit: contain;     /* La imagen se ajustará al contenedor sin recortarse */
+  border-radius: 10px;     /* Bordes redondeados */
+  margin-bottom: 10px;     /* Espacio entre la imagen y el resto del contenido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para un efecto visual */
+}
+
+/* Botones estilo metalizado */
+button {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+/* Estilos para los botones específicos */
+button.more-info {
+  background: linear-gradient(145deg, #3a9ecf, #2b7ca6);
+}
+
+button.more-info:hover {
+  background: linear-gradient(145deg, #2b7ca6, #3a9ecf);
+}
+
+button.view-reports {
+  background: linear-gradient(145deg, #6ccf3a, #4e9e29);
+}
+
+button.view-reports:hover {
+  background: linear-gradient(145deg, #4e9e29, #6ccf3a);
+}
+
+button.make-report {
+  background: linear-gradient(145deg, #3a3acf, #4646f1);
+}
+
+button.make-report:hover {
+  background: linear-gradient(145deg, #2c2ce8, #4646f1);
+}
+
+button.invoice {
+  background: linear-gradient(145deg, #cf7a3a, #a65d29);
+}
+
+button.invoice:hover {
+  background: linear-gradient(145deg, #a65d29, #cf7a3a);
+}
+
+/* Media Queries para diseño responsivo */
+@media (max-width: 768px) {
+  .car-card {
+    min-height: 250px;
+    width: 100%; /* En pantallas pequeñas, ocupa el ancho completo */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .car-row {
+    flex-direction: column;
+  }
+
+  .car-card {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .car-card {
+    min-height: 300px;
+  }
+}

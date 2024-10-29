@@ -1,0 +1,61 @@
+<!-- ajust.component.html -->
+<div *ngIf="employee" class="settings-container">
+    <header class="settings-header">
+        <h2>Ajustes de Perfil</h2>
+    </header>
+
+    <div class="header-buttons">
+        <button class="close-btn" (click)="logout()">Cerrar Sesión</button>
+        <button class="close-btn" (click)="onToggleAjust()">Cerrar Ajustes</button>
+    </div>
+
+    <!-- Opciones -->
+    <div class="settings-options">
+        <button class="option-btn" (click)="toggleEditMode()">
+            {{ editMode ? 'Cancelar Edición' : 'Editar Perfil' }}
+        </button>
+        <button class="option-btn" (click)="openPhotoSelector()">Cambiar Foto de Perfil</button>
+        <input type="file" id="fileInput" (change)="onPhotoSelected($event)" accept="image/*" hidden>
+    </div>
+
+    <!-- Formulario desplegable -->
+    <form *ngIf="editMode" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-group">
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="firstName" [(ngModel)]="employee.firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" [(ngModel)]="employee.lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="username" [(ngModel)]="employee.username" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="role">Rol:</label>
+            <input type="text" id="role" [(ngModel)]="employee.role" name="role">
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Foto de Perfil:</label>
+            <img *ngIf="employee.photo" [src]="employee.photo" alt="Foto de perfil actual" class="profile-photo">
+        </div>
+
+        <button type="submit" class="save-btn">Guardar Cambios</button>
+    </form>
+
+    <!-- Vista general con efectos visuales -->
+    <div *ngIf="!editMode" class="view-container">
+        <div class="profile-card">
+            <img *ngIf="employee.photo" [src]="employee.photo" alt="Foto de perfil" class="profile-photo-large">
+            <p><strong>Nombre:</strong> {{ employee.firstName }}</p>
+            <p><strong>Apellido:</strong> {{ employee.lastName }}</p>
+            <p><strong>Nombre de Usuario:</strong> {{ employee.username }}</p>
+            <p><strong>Rol:</strong> {{ employee.role || 'No especificado' }}</p>
+        </div>
+    </div>
+</div>

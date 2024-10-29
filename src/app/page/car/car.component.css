@@ -1,0 +1,239 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    margin-top: 60px;
+    min-height: calc(100vh - 60px - 100px);
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: rgb(29, 29, 29);
+    padding: 20px;
+    width: 300px;
+    min-height: 100%;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: #fff;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* White text with shadow */
+}
+
+/* Buscador */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #2980b9;
+    background-color: #ecf0f1;
+    color: #333;
+    font-size: 1rem;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2); /* Depth effect for input */
+}
+
+/* Rango de Fechas */
+.date-range {
+    margin-bottom: 20px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid #2980b9;
+    background-color: #ecf0f1;
+    color: #333;
+    margin-top: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de acción con efecto metalizado */
+.sidebar .action-button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    /* White text with shadow */
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+    /* Sombra 3D para dar volumen */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .action-button:hover {
+    transform: translateY(-2px); /* Small lift effect */
+}
+
+/* Efecto metalizado para cada botón */
+.register-button {
+    background: linear-gradient(145deg, #3A7CA5, #69B3E7, #1A4D7A); /* Azul metalizado */
+}
+
+.red-button {
+    background: linear-gradient(145deg, #fc9d17, #ffcc33, #e68a00);
+}
+
+.archive-button {
+    background: linear-gradient(145deg, #27AE60, #2ECC71, #1E8449); /* Verde metalizado */
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #262627;
+    color: #fff;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+/* Car List */
+.car-list {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.carousel-inner {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+}
+
+.car-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.car-card {
+    flex: 1;
+    min-height: 150px;
+    max-height: 180px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #444;
+    transition: transform 0.2s;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilo de los botones */
+.car-actions {
+    margin-top: 10px;
+}
+
+.action-button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.report-list-button {
+    background-color: #007bff;
+}
+
+.report-button {
+    background-color: #28a745;
+}
+
+/* Barra de desplazamiento */
+.scroll-bar {
+    position: absolute;
+    right: 5px;
+    top: 10%;
+    height: 80%;
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scroll-thumb {
+    background-color: #2980b9;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .footer {
+        position: relative;
+    }
+}

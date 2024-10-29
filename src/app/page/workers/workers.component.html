@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+    <div class="navbar">
+        <button class="action-button" (click)="showRegisterWorker()">Añadir Trabajador</button>
+        <button class="action-button" (click)="onAddTask()">Añadir tarea</button>
+
+        <h3 class="search-label">Buscador de empleados:</h3>
+        <!-- Aquí estamos conectando el input con el método filterEmployees -->
+        <input type="text" placeholder="Buscar por nombre o apellido" class="search-input"
+            (input)="filterEmployees($event)">
+    </div>
+
+    <div class="main-content">
+        <div class="left-section">
+            <app-list-employee [employees]="filteredEmployees" (startChat)="onStartChat($event)">
+            </app-list-employee>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="right-section">
+            <app-registre-worker *ngIf="isRegisterWorkerVisible" (workerSaved)="onWorkerSaved()"
+                (workerCancelled)="onWorkerCancelled()">
+            </app-registre-worker>
+
+            <app-form-file *ngIf="isFileFormVisible" (cancelTask)="onCancelFileForm()"></app-form-file>
+
+            <app-chat *ngIf="isChatVisible" [employee]="chatWithEmployee" (closeChat)="closeChat()"></app-chat>
+        </div>
+    </div>
+
+    <div *ngIf="confirmationMessage" class="confirmation-message">
+        {{ confirmationMessage }}
+    </div>
+</div>

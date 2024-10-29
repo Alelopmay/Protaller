@@ -1,0 +1,97 @@
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Bienvenido a la App de Gestión de Talleres</h1>
+            <p>Una solución integral para gestionar coches, clientes y trabajadores en tu taller de manera eficiente.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>Descripción de la App</h2>
+        <p>Nuestra app está diseñada para facilitar la gestión de un taller mecánico. Podrás registrar coches, clientes
+            y trabajadores, así como llevar un seguimiento detallado de cada vehículo que entra al taller. Además,
+            podrás gestionar las facturas y diagnósticos de las averías, todo en un solo lugar.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Funciones Clave</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Registro de Coches</h3>
+                <p>Agrega y gestiona la información completa de los vehículos que ingresan al taller, incluyendo
+                    detalles del cliente.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Gestión de Clientes</h3>
+                <p>Registra y organiza los datos de tus clientes para mantener un historial completo y eficiente.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Gestión de Trabajadores</h3>
+                <p>Controla las asignaciones de trabajo y el desempeño de los empleados del taller.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Formulario de Diagnóstico</h3>
+                <p>Completa formularios de diagnóstico detallados para cada coche que entra al taller.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Facturación Integrada</h3>
+                <p>Genera y organiza facturas de manera rápida y sencilla, con un registro completo de cada servicio.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3>Información sobre Talleres</h3>
+                <p>Proporcionamos información detallada sobre los talleres disponibles para que los clientes tomen
+                    decisiones informadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Leaflet Section -->
+<!-- Mapa Leaflet Section -->
+<section class="map-section">
+    <h2>Ubicación de nuestros talleres</h2>
+    <div id="map" style="height: 400px;"></div> <!-- Contenedor del mapa -->
+
+    <!-- Campo para definir el radio de búsqueda y botón de acción -->
+    <div class="map-controls">
+        <label for="radius">Radio de búsqueda (metros):</label>
+        <input type="number" id="radius" [(ngModel)]="radius" min="1000" max="10000" step="500">
+        <button (click)="searchNearbyCompanies()">Buscar Talleres Cercanos</button>
+    </div>
+    <br>
+<!-- Lista de talleres encontrados -->
+<!-- Lista de talleres encontrados -->
+<div class="workshops-list-container">
+    <h3 class="workshops-title">Talleres Cercanos</h3> <!-- Título fuera del carrusel -->
+    <div class="workshops-list">
+        <ul>
+            <li *ngFor="let company of companies">
+                <strong>Nombre del Taller:</strong> {{ company.name }} <br>
+                <strong>Dirección:</strong> {{ company.address }}<br>
+                <strong>Horario:</strong> {{ company.schedule }}<br>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+</section>
+
+    
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <h2>¡Únete a nosotros!</h2>
+        <p>Explora todas las funcionalidades que ofrecemos para mejorar la gestión de tu taller.</p>
+        <div class="cta-buttons">
+            <button class="cta-button" (click)="irALogin()">Usar Nuestra Web</button>
+            <button class="cta-button">Descargar Nuestra App</button>
+            <button class="cta-button" (click)="infoForClient()">Solicitar Información de Mi Coche</button>
+        </div>
+    </section>
+</div>

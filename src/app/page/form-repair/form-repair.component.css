@@ -1,0 +1,122 @@
+/* Estilos generales de la página */
+body {
+  background: linear-gradient(135deg, rgba(29, 29, 29, 1) 0%, rgba(44, 44, 44, 1) 100%); /* Fondo negro metalizado cromado */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+  color: white; /* Texto en blanco */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Alto completo */
+}
+.background {
+  background-color: #252424;
+}
+/* Estilo para el contenedor del formulario */
+.paper {
+  margin-top: 10px;
+  background: linear-gradient(135deg, rgba(50, 50, 50, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%); /* Fondo gris oscuro metalizado */
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 30px; /* Espaciado interno */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombras profundas */
+  max-width: 700px; /* Ancho máximo del formulario */
+  margin: 40px auto; /* Centrar y dar espacio alrededor */
+  color: white; /* Texto en blanco */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Cambiar efecto en hover para dar sensación de elevación */
+.paper:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada */
+}
+
+/* Estilo del título */
+h1 {
+  text-align: center; /* Centrar el título */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  background-color: rgba(25, 25, 25, 0.8); /* Fondo oscuro semitransparente */
+  padding: 10px;
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 24px;
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+  margin-bottom: 20px; /* Espacio entre los grupos */
+}
+
+/* Estilo para las etiquetas */
+label {
+  font-weight: bold; /* Negrita */
+  margin-bottom: 10px; /* Espacio debajo de la etiqueta */
+  display: block;
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Estilo para los campos de entrada */
+input, textarea {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 10px; /* Espaciado interno */
+  border: 2px solid #777; /* Borde gris */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #333; /* Fondo gris oscuro */
+  color: white; /* Texto en blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra interna */
+  transition: border 0.3s, box-shadow 0.3s; /* Transición suave para los bordes y sombra */
+}
+
+/* Estilo para los campos en foco */
+input:focus, textarea:focus {
+  border: 2px solid #4CAF50; /* Cambiar el borde al color verde cuando está enfocado */
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.5); /* Añadir sombra verde */
+  outline: none; /* Quitar el borde por defecto */
+}
+
+/* Estilo para el botón */
+button {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 12px; /* Espaciado interno */
+  background-color: #4CAF50; /* Botón verde */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin bordes */
+  border-radius: 25px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+  transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en el botón */
+}
+
+/* Efecto de hover para el botón */
+button:hover {
+  background-color: #45a049; /* Cambiar el color al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo del botón deshabilitado */
+button:disabled {
+  background-color: #777; /* Fondo gris para el botón deshabilitado */
+  cursor: not-allowed; /* Mostrar que no es interactivo */
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+  .paper {
+    padding: 20px; /* Reducir padding en pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 20px; /* Reducir tamaño del título */
+  }
+
+  input, textarea {
+    padding: 8px; /* Reducir padding en los campos */
+  }
+
+  button {
+    font-size: 14px; /* Reducir tamaño del texto del botón */
+    padding: 10px;
+  }
+}

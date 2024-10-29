@@ -1,0 +1,130 @@
+/* Fondo de la página con un estilo de taller */
+.background {
+  background: #1c1c1e url('/assets/garage-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Contenedor del formulario con estilo metálico */
+.container.metallic-form {
+  background: linear-gradient(135deg, #2f2f2f, #434343);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid #888888;
+}
+
+/* Títulos principales con estilo industrial */
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.5px;
+}
+
+/* Texto de los detalles del formulario */
+p {
+  font-size: 18px;
+  color: #e0e0e0;
+  margin: 10px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor de fotos */
+.photos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.photo-item {
+  border: 2px solid #555;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #333;
+  padding: 5px;
+}
+
+.photo {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
+}
+
+/* Botones de acción estilo mecánico */
+button {
+  padding: 12px 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #5d5d61, #39393b);
+  color: #f0f0f0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.8);
+  font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #6e6e72, #4a4a4c);
+  transform: translateY(-3px);
+}
+
+/* Estilo de botones específicos */
+.modify-button {
+  background-color: #57575a;
+}
+
+.info-button {
+  background-color: #4d4d51;
+}
+
+.print-button {
+  background-color: #6a6a6e;
+}
+
+/* Estilo metálico refinado */
+.metallic {
+  background: linear-gradient(145deg, #434348, #2e2e30);
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #6d6d6d;
+}
+
+/* Mejora en la sombra y estructura de los elementos */
+.form-item, .invoice-item {
+  padding: 18px;
+  margin-bottom: 12px;
+  background-color: #3e3e42;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-item:hover, .invoice-item:hover {
+  background-color: #47474b;
+}
+
+/* Añadido un estilo similar a la fibra de carbono */
+.metallic-fiber {
+  background: linear-gradient(135deg, #3c3c3e, #2b2b2d);
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.6);
+}

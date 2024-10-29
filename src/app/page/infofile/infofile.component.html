@@ -1,0 +1,78 @@
+<div class="file-container" role="main">
+    <div *ngIf="file; else noDetails" class="file-details-container" aria-live="polite">
+        <h2 class="file-details-title">Detalles del Archivo</h2>
+        <div class="file-details-card">
+            <h3 class="file-details-subtitle">Información del archivo:</h3>
+
+            <p><strong>Fecha:</strong> {{ file.date ? (file.date | date:'yyyy-MM-dd HH:mm:ss') : 'Fecha inválida' }}</p>
+            <p><strong>Reporte:</strong> {{ file.report }}</p>
+            <p><strong>Matrícula del coche:</strong> {{ file.carLicensePlate }}</p>
+            <p><strong>Detalles:</strong> {{ file.details }}</p>
+            <p><strong>Archivado:</strong> {{ file.archived ? 'Sí' : 'No' }}</p>
+
+            <h3 class="file-details-subtitle">Información del cliente:</h3>
+            <p><strong>Nombre del cliente:</strong> {{ file.clientName || 'Desconocido' }}</p>
+
+            <!-- Cronómetro -->
+            <div *ngIf="isWorking" class="timer" aria-live="assertive">
+                <strong>Tiempo trabajado:</strong> {{ formattedTime }}
+            </div>
+
+            <!-- Guardar fecha y hora -->
+            <div *ngIf="startDateTime" class="time-info">
+                <p><strong>Inicio:</strong> {{ startDateTime | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+            </div>
+            <div *ngIf="endDateTime" class="time-info">
+                <p><strong>Fin:</strong> {{ endDateTime | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+            </div>
+
+            <!-- Botones -->
+            <div class="button-container">
+                <button (click)="startWork()" class="btn start">Empezar a Trabajar</button>
+                <button (click)="finishWork()" class="btn finish">Terminar</button>
+                <button (click)="archive()" class="btn archive">Archivar</button>
+            </div>
+        </div>
+
+        <!-- Mostrar historial de reparaciones con carrusel -->
+        <div class="repair-data-container">
+            <h3 class="file-details-subtitle">Historial de Reparaciones:</h3>
+            <div class="repair-data-card">
+                <div class="repair-carousel">
+                    <div *ngFor="let repair of repairData" class="repair-item">
+                        <div class="repair-day">
+                            <strong>Inicio:</strong> {{ repair.startDate ? (repair.startDate | date:'yyyy-MM-dd
+                            HH:mm:ss') : 'Fecha inválida' }}
+                        </div>
+                        <div class="repair-end-day">
+                            <strong>Fin:</strong> {{ repair.endDate ? (repair.endDate | date:'yyyy-MM-dd HH:mm:ss') :
+                            'Fecha inválida' }}
+                        </div>
+                        <div class="repair-hours">
+                            <strong>Horas Trabajadas:</strong>
+                            {{ (repair.endDate ? (repair.endDate.getTime() - repair.startDate.getTime()) / 3600000 : 0)
+                            | number:'1.0-0' }} horas
+                        </div>
+                    </div>
+                </div>
+                <div class="total-hours">
+                    <strong>Total Horas Trabajadas:</strong> {{ getTotalHours() | number: '1.0-0' }} horas
+                </div>
+ 
+            </div>
+        </div>
+
+        <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+        </div>
+    </div>
+
+    <ng-template #noDetails>
+        <div *ngIf="errorMessage" class="error-message">
+            <p class="error">{{ errorMessage }}</p>
+        </div>
+    </ng-template>
+</div>

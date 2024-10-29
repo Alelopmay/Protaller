@@ -1,0 +1,160 @@
+/* Estilos Generales */
+body {
+    background: #1c1c1c; /* Fondo gris metalizado que cubre toda la pantalla */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía moderna */
+    width: 100%;
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin padding */
+    display: flex; /* Flexbox para centrar el formulario */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+/* Contenedor Principal */
+.main-container {
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    height: 48vw;
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centrar texto */
+    background: linear-gradient(135deg, rgba(29, 29, 30, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%); /* Degradado metálico */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Sombra para profundidad */
+    color: #ffffff; /* Color del texto */
+}
+
+
+/* Título de la Página */
+.page-title {
+    color: #ffffff; /* Color blanco */
+    font-size: 28px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilos del Formulario */
+.invoice-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ancho completo */
+    max-width: 800px; /* Ancho máximo */
+    background-color: #282828; /* Gris oscuro metalizado */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Sombra más prominente */
+    margin: auto; /* Centrar formulario */
+}
+
+/* Estilo del título */
+.form-title {
+    color: #ffffff; /* Color blanco */
+    margin-bottom: 20px; /* Espacio debajo del título del formulario */
+    background-color: #1e1e1e;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Contenedor del Formulario */
+.form-container {
+    display: flex; /* Usar flexbox */
+    justify-content: space-between; /* Espacio entre columnas */
+}
+
+/* Estilo de las Columnas */
+.left-column, .right-column {
+    width: 48%; /* Ajustar a la mitad del ancho */
+}
+
+/* Estilo de los Grupos de Formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio debajo de cada grupo */
+}
+
+/* Estilo de las Etiquetas */
+label {
+    color: #ffffff; /* Color blanco */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+    display: block; /* Mostrar como bloque */
+}
+
+/* Contenedor de Entrada */
+.input-container {
+    position: relative; /* Posicionamiento relativo para los iconos */
+}
+
+/* Estilo de Entrada */
+.form-input {
+    padding: 12px; /* Espacio interno */
+    border: 2px solid #555; /* Borde gris claro */
+    border-radius: 25px; /* Bordes cilíndricos */
+    background-color: #444; /* Color de fondo de los campos de entrada */
+    color: #ffffff; /* Texto blanco */
+    transition: border 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo de campos al enfocar */
+.form-input:focus {
+    border: 2px solid #4CAF50; /* Cambiar color al enfocar */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra verde al enfocar */
+    outline: none; /* Quitar contorno predeterminado */
+}
+
+/* Estilo de mensajes de error */
+.error-message {
+    color: #FF4D4D; /* Color rojo para mensajes de error */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Estilo de botón */
+.submit-button {
+    padding: 12px; /* Espacio interno */
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes cilíndricos */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    width: 100%; /* Botón ocupa todo el ancho */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Color al pasar el ratón */
+.submit-button:hover {
+    background-color: #45a049; /* Color al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Mensaje de éxito */
+.success-message {
+    text-align: center; /* Centramos el mensaje */
+    color: #4CAF50; /* Color verde para el mensaje de éxito */
+    margin-top: 20px; /* Espacio encima del mensaje */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+    .form-container {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+}
+
+/* Estilo para los íconos */
+.input-container i {
+    position: absolute; /* Posicionamiento absoluto para iconos */
+    left: 10px; /* Espacio desde la izquierda */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Centrar verticalmente */
+    color: #777; /* Color gris para iconos */
+    font-size: 18px; /* Tamaño de iconos */
+}
+.error-message {
+    color: #FF4D4D; /* Rojo para errores */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    margin-top: 20px;
+}

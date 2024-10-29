@@ -1,0 +1,25 @@
+<div *ngIf="invoiceData; else noDataTemplate" class="invoice-container">
+    <h1>Factura de Taller</h1>
+
+    <div class="invoice-data">
+        <p><strong>Subtotal:</strong> {{ invoiceData.subtotal | currency }}</p>
+        <p><strong>Fecha de Emisión:</strong> {{ invoiceData.issueDate | date:'dd/MM/yyyy' }}</p>
+        <p><strong>IVA:</strong> {{ invoiceData.vat | currency }}</p>
+        <p><strong>Total:</strong> {{ invoiceData.total | currency }}</p>
+        <p><strong>Método de Pago:</strong> {{ invoiceData.paymentMethod }}</p>
+        <p><strong>Garantía:</strong> {{ invoiceData.warranty }}</p>
+    </div>
+
+    <div class="additional-info">
+        <p><strong>Gracias por confiar en nosotros!</strong></p>
+        <p>Si tiene alguna pregunta sobre su factura, no dude en contactarnos.</p>
+    </div>
+
+    <!-- Botón de imprimir -->
+    <button (click)="printInvoice()" class="print-button">Descargar factura</button>
+</div>
+
+<!-- Plantilla para cuando no hay datos -->
+<ng-template #noDataTemplate>
+    <p>No se ha encontrado la factura.</p>
+</ng-template>

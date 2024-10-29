@@ -1,0 +1,148 @@
+/* Estilos para el botón que abre el chat */
+.open-chat-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.open-chat-button:hover {
+  background-color: #45a049;
+}
+/* Contenedor del chat */
+/* Contenedor del chat */
+.chat-container {
+  border: 1px solid #333; /* Borde oscuro para todo el chat */
+  padding: 15px;
+  width: 640px; /* Ancho ajustado */
+  max-width: 90vw; /* Máximo 90% del ancho de la pantalla */
+  height: 640px; /* Altura ajustada */
+  max-height: 80vh; /* Máxima altura del chat */
+  background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* Fondo gradiente oscuro */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Sombra profunda */
+  display: flex;
+  flex-direction: column; /* Flexbox para organizar el contenido */
+  transition: width 0.3s; /* Transición suave en el ancho */
+}
+
+/* Cabecera del chat con botón de cerrar */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.chat-header h3 {
+  color: #fff; /* Texto blanco en la cabecera */
+}
+
+.close-chat-button {
+  background-color: #ff4d4d; /* Color rojo vibrante */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.close-chat-button:hover {
+  background-color: #cc0000; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Contenedor de los mensajes */
+.chat-messages {
+  max-height: 480px; /* Ajustar la altura máxima para el contenedor de mensajes */
+  overflow-y: auto; /* Scroll cuando hay muchos mensajes */
+  margin-bottom: 10px;
+  flex-grow: 1; /* Hace que el contenedor de mensajes ocupe el espacio disponible */
+  background-color: rgba(255, 255, 255, 0.05); /* Fondo semitransparente para los mensajes */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px; /* Padding para mejor separación */
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra interna para más profundidad */
+}
+
+/* Estilo para los mensajes del emisor (usuario actual) */
+.my-message {
+  background-color: #222324; /* Azul claro para mensajes del emisor */
+  color: #fff; /* Color del texto */
+  margin-left: auto; /* Alinear a la derecha */
+  padding: 12px 15px; /* Espacio interior */
+  border-radius: 15px 15px 5px 15px; /* Bordes redondeados */
+  border: 1px solid #ffffff; /* Borde azul más oscuro */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  max-width: 80%; /* Limitar el ancho del mensaje */
+  position: relative; /* Posicionamiento relativo */
+  margin-bottom: 10px; /* Separación entre mensajes */
+}
+
+/* Estilo para los mensajes del receptor (otros usuarios) */
+.message-other {
+  background-color: #f1f1f1; /* Gris claro para mensajes del receptor */
+  color: #ffffff; /* Texto gris oscuro */
+  margin-right: auto; /* Alinear a la izquierda */
+  padding: 12px 15px; /* Espacio interior */
+  border-radius: 15px 15px 15px 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde gris */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  max-width: 80%; /* Limitar el ancho del mensaje */
+  position: relative; /* Posicionamiento relativo */
+  margin-bottom: 10px; /* Separación entre mensajes */
+}
+
+/* Estilos generales para los mensajes */
+.message-sender {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+  color: #fff; /* Cambiar a blanco para emisor */
+}
+
+.message-text {
+  margin-left: 10px;
+  word-wrap: break-word; /* Para evitar que el texto se salga del contenedor */
+}
+
+.message-date {
+  font-size: 12px;
+  color: lightgray;
+  margin-top: 5px;
+  text-align: right; /* Alineación del texto de la fecha */
+  display: block; /* Asegurar que se muestre debajo del mensaje */
+}
+
+/* Estilo para el input de texto */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #777; /* Borde gris */
+  border-radius: 20px; /* Bordes redondeados */
+  margin-top: 10px; /* Espacio superior */
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  transition: border-color 0.3s, background-color 0.3s; /* Transición suave */
+}
+
+input[type="text"]:focus {
+  border-color: #4CAF50; /* Cambiar el borde a verde al enfocar */
+  background-color: #222; /* Fondo aún más oscuro */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 90%; /* Ancho en móviles */
+    height: auto; /* Altura automática para móviles */
+    max-height: 80vh; /* Altura máxima en móviles */
+  }
+}
+span {
+  font-weight: bold;
+  color: #d4d9d4;
+}

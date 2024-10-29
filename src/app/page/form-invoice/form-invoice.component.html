@@ -1,0 +1,96 @@
+<div class="main-container">
+    <h1 class="page-title">Sistema de Facturación para Talleres de Coches</h1>
+
+    <form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()" class="invoice-form">
+        <h2 class="form-title">Factura</h2>
+
+        <div class="form-container">
+            <div class="left-column">
+                <div class="form-group">
+                    <label for="subtotal">Subtotal:</label>
+                    <div class="input-container">
+                        <i class="fas fa-dollar-sign"></i>
+                        <input id="subtotal" type="number" formControlName="subtotal" class="form-input" />
+                    </div>
+                    <div
+                        *ngIf="invoiceForm.get('subtotal')?.invalid && (invoiceForm.get('subtotal')?.dirty || invoiceForm.get('subtotal')?.touched)">
+                        <small class="error-message">El subtotal es obligatorio y debe ser un número positivo.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="issueDate">Fecha de Emisión:</label>
+                    <div class="input-container">
+                        <i class="fas fa-calendar-alt"></i>
+                        <!-- Campo de fecha deshabilitado -->
+                        <input id="issueDate" type="date" formControlName="issueDate" class="form-input"
+                            [disabled]="true" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vat">IVA:</label>
+                    <div class="input-container">
+                        <i class="fas fa-percent"></i>
+                        <input id="vat" type="number" formControlName="vat" class="form-input" />
+                    </div>
+                    <div
+                        *ngIf="invoiceForm.get('vat')?.invalid && (invoiceForm.get('vat')?.dirty || invoiceForm.get('vat')?.touched)">
+                        <small class="error-message">El IVA es obligatorio y debe ser un número positivo.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="form-group">
+                    <label for="total">Total:</label>
+                    <div class="input-container">
+                        <i class="fas fa-calculator"></i>
+                        <input id="total" type="number" formControlName="total" class="form-input" />
+                    </div>
+                    <div
+                        *ngIf="invoiceForm.get('total')?.invalid && (invoiceForm.get('total')?.dirty || invoiceForm.get('total')?.touched)">
+                        <small class="error-message">El total es obligatorio y debe ser un número positivo.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentMethod">Método de Pago:</label>
+                    <div class="input-container">
+                        <i class="fas fa-credit-card"></i>
+                        <input id="paymentMethod" formControlName="paymentMethod" class="form-input" />
+                    </div>
+                    <div
+                        *ngIf="invoiceForm.get('paymentMethod')?.invalid && (invoiceForm.get('paymentMethod')?.dirty || invoiceForm.get('paymentMethod')?.touched)">
+                        <small class="error-message">El método de pago es obligatorio.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="warranty">Garantía:</label>
+                    <div class="input-container">
+                        <i class="fas fa-shield-alt"></i>
+                        <input id="warranty" formControlName="warranty" class="form-input" />
+                    </div>
+                    <div
+                        *ngIf="invoiceForm.get('warranty')?.invalid && (invoiceForm.get('warranty')?.dirty || invoiceForm.get('warranty')?.touched)">
+                        <small class="error-message">La garantía es obligatoria.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-button-container">
+            <button type="submit" class="submit-button">Guardar Factura</button>
+        </div>
+
+        <!-- Mensaje de éxito -->
+        <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+        
+        <!-- Mensaje de error -->
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+        
+        <!-- Validación del formulario -->
+        <p *ngIf="invoiceForm.valid" class="success-message">¡La reparación del formulario funciona!</p>
+    </form>
+</div>

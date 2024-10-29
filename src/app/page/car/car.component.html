@@ -1,0 +1,48 @@
+<div class="dashboard-container">
+    <div class="sidebar">
+        <h2>Barra de Navegación</h2>
+
+        <!-- Sección de búsqueda -->
+        <div class="search-section">
+            <h3>Buscar:</h3>
+            <input type="text" placeholder="Buscar por modelo, categoría o matrícula" class="search-input"
+                [(ngModel)]="searchQuery" (input)="onSearchQueryChanged()">
+        </div>
+
+        <!-- Botones de acción para alternar entre registrar coche, mostrar lista y Mi Archivador -->
+        <button class="action-button register-button" (click)="showRegisterCarForm()">Registrar entrada de
+            coche</button>
+        <button class="action-button red-button" (click)="showCarList()">Ver lista de coches</button>
+        <button class="action-button archive-button" (click)="showFileList()">Mi Archivador</button>
+        <!-- Actualizado -->
+    </div>
+
+    <div class="main-content">
+        <h2>Información de Coche en el taller </h2>
+
+        <!-- Mostrar el formulario de registro de coche -->
+        <app-registre-car *ngIf="isRegisterCarVisible" (cancel)="hideRegisterCarForm()"
+            (register)="onRegisterCar()"></app-registre-car>
+
+        <!-- Mostrar la lista de coches -->
+        <div *ngIf="isCarListVisible">
+            <app-list-car [searchQuery]="searchQuery"></app-list-car>
+        </div>
+
+        <!-- Mostrar el archivador -->
+        <div *ngIf="isFileListVisible">
+            <app-list-file></app-list-file>
+        </div>
+
+        <!-- Otros elementos -->
+        <div *ngIf="!isRegisterCarVisible && !isCarListVisible && !isFileListVisible">
+            <p>Aquí puede haber otros elementos o contenido.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Mensaje emergente -->
+<div *ngIf="showSuccessMessage" class="popup">
+    <p>Coche registrado correctamente!</p>
+</div>
+

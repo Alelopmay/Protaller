@@ -1,0 +1,22 @@
+<div class="background">
+    <div class="info-container">
+        <h2 class="info-title">Información del Cliente</h2>
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Número de Teléfono" [(ngModel)]="phoneNumber" />
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="email" />
+        </div>
+        <button class="btn btn-primary" (click)="requestCarInfo()">Solicitar Información de Coches</button>
+
+        <button class="btn btn-secondary" (click)="goBack()">Volver a Inicio</button>
+
+        <p *ngIf="message" class="alert alert-info">{{ message }}</p>
+
+        <!-- Aquí usamos el componente de lista de coches -->
+        <app-list-car-byclient *ngIf="cars.length > 0" [cars]="cars"></app-list-car-byclient>
+
+        <p *ngIf="cars.length === 0 && message" class="alert alert-warning">{{ message }}</p>
+    </div>
+</div>

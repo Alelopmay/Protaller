@@ -1,0 +1,19 @@
+<div class="car-carousel">
+    <div class="car-row" *ngFor="let carRow of getCarRows(filteredCars)">
+        <div class="car-card" *ngFor="let car of carRow">
+            <img class="car-image" [src]="car.imageUrl" alt="{{ car.model }}">
+
+            <div class="car-info">
+                <h3>{{ car.model }}</h3>
+                <p>Matrícula: {{ car.licensePlate }}</p>
+                <p>Condición: {{ car.carCondition }}</p>
+            </div>
+
+            <button class="more-info" (click)="moreInfo(car)">Más información</button>
+            <button class="make-report" (click)="makeReport(car)">Hacer informe</button>
+            <button class="invoice" (click)="navigateToInvoice(car)">
+                {{ car.hasInvoice ? 'Ver factura' : 'Hacer factura' }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,286 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #333; /* Fondo gris oscuro similar al login */
+    color: #fff;
+}
+
+/* Home Container */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(74, 73, 73); /* Gris oscuro */
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    color: #ffffff;
+    background-color: #353333;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #626e7b;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #34495e;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Features Section */
+.features-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2980b9;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Mapa Leaflet Section */
+.map-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Contenedor del mapa */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Controles del mapa */
+.map-controls {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.map-controls label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.map-controls input {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width: 120px;
+    margin-right: 20px;
+}
+
+.map-controls button {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.map-controls button:hover {
+    background-color: #1c6a9a;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #000000;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-section h2, .features-section h2, .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+/* Estilo del contenedor de la lista de talleres */
+.workshops-list-container {
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Ocultar la barra de desplazamiento para navegadores modernos */
+.workshops-list {
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+    height: 300px; /* Altura del carrusel */
+    overflow-y: auto; /* Desplazamiento vertical */
+    border: 1px solid #2980b9; /* Borde azul para destacar el carrusel */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #2c3e50; /* Fondo oscuro para el carrusel */
+}
+
+/* Estilo para ocultar la barra de desplazamiento en Chrome, Safari y Opera */
+.workshops-list::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+}
+
+/* Listado de talleres */
+.workshops-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada taller */
+.workshops-list li {
+    background-color: #ffffff; /* Fondo blanco para cada taller */
+    color: #34495e; /* Texto oscuro */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 10px 0; /* Espaciado entre talleres */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.workshops-title {
+    color: #ffffff;
+    background-color: #353333;
+}

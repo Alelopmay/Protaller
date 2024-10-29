@@ -1,0 +1,205 @@
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Evita el desbordamiento de contenido */
+}
+
+/* Estilo general de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2C2C2C;
+    color: white;
+    table-layout: auto; /* Cambia a auto para mejor manejo de ancho */
+}
+
+/* Estilos para el encabezado */
+thead {
+    background-color: #4F4F4F;
+    color: #D1D1D1;
+}
+
+/* Estilos para las celdas del encabezado */
+thead th {
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 3px solid #999999;
+    text-align: center; /* Centra el texto en el encabezado */
+    word-wrap: break-word; /* Permite el ajuste de texto en las celdas */
+    font-size: 22px; /* Tamaño de fuente más grande en encabezado */
+}
+
+/* Estilos para las filas y celdas */
+tbody tr {
+    border-bottom: 1px solid #777777;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #333333;
+}
+
+tbody tr:hover {
+    background-color: #4A4A4A;
+}
+
+/* Estilo de las celdas */
+td {
+    padding: 10px; /* Espaciado en celdas */
+    color: #E0E0E0;
+    text-align: center; /* Centra el contenido de las celdas */
+    vertical-align: middle; /* Centra verticalmente el contenido */
+    overflow: hidden;
+    word-wrap: break-word; /* Ajusta el texto largo */
+    font-size: 20px; /* Tamaño de fuente más grande en celdas */
+}
+
+/* Estilo de los botones "Trabajar" y "Archivar" */
+button {
+    border: none;
+    color: white;
+    padding: 12px 20px; /* Aumentar el padding para botones más grandes */
+    text-align: center;
+    font-size: 18px; /* Tamaño de fuente por defecto */
+    border-radius: 25px; /* Bordes más redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    transition: background 0.3s, transform 0.2s ease; /* Suaviza las transiciones */
+    margin: 10px; /* Espaciado entre botones */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    background: linear-gradient(145deg, #1c1c1c, #333); /* Color base metálico oscuro */
+}
+
+/* Colores diferentes para cada botón */
+button.work {
+    background: linear-gradient(145deg, #5a5a5a, #7a7a7a); /* Botón metálico verde oscuro */
+}
+
+button.archive {
+    background: linear-gradient(145deg, #6b2c2c, #8b4f4f); /* Botón metálico rojo oscuro */
+}
+
+/* Estilo de hover para botones */
+button:hover {
+    background: linear-gradient(145deg, #333, #4c4c4c); /* Color en hover */
+    transform: translateY(-2px); /* Elevación en hover */
+}
+
+button:active {
+    transform: translateY(1px); /* Efecto al hacer clic */
+}
+
+/* Otras propiedades de los botones */
+button {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    max-height: 540px; /* Altura máxima para ver 9 archivos (9 filas * 60px cada una) */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    position: relative;
+    border-top: 1px solid #999999; /* Línea superior para el carrusel */
+}
+
+/* Ocultar la barra de desplazamiento vertical en Webkit browsers */
+.carousel-container::-webkit-scrollbar {
+    width: 0; /* Ancho de la barra de desplazamiento */
+    height: 0; /* Altura de la barra de desplazamiento */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    /* Ocultar el encabezado en móviles */
+    thead {
+        display: none; /* Oculta el encabezado en pantallas pequeñas */
+    }
+
+    .table-container {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Permite el desplazamiento horizontal */
+    }
+
+    table {
+        display: block; /* Bloque para la tabla */
+        width: 100%; /* Ancho completo */
+    }
+
+    table tbody {
+        display: block; /* Bloque para el cuerpo de la tabla */
+    }
+
+    table tbody tr {
+        display: flex; /* Cambia a flex para mejor disposición */
+        flex-direction: column; /* Columna para filas en móviles */
+        border-bottom: 2px solid #ddd;
+        padding: 10px 0; /* Espaciado en filas */
+    }
+
+    table tbody td {
+        display: block; /* Bloque para celdas */
+        text-align: left; /* Alinea el texto a la izquierda en móviles */
+        font-size: 20px; /* Aumentar tamaño de fuente en celdas */
+        border-bottom: none; /* Sin borde inferior en celdas */
+        padding: 10px; /* Ajuste del padding de las celdas */
+    }
+
+    table tbody td::before {
+        content: attr(data-label); /* Etiqueta para las celdas */
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+        text-transform: capitalize;
+    }
+
+    /* Ajustar tamaño de fuente y botones en móviles */
+    button {
+        font-size: 20px; /* Aumentar tamaño de fuente en botones en móviles */
+        padding: 15px 20px; /* Ajustar el padding de los botones */
+        width: auto; /* Hacer que los botones ajusten su tamaño */
+        margin: 10px 0; /* Margen entre botones */
+    }
+}
+
+@media (min-width: 769px) {
+    /* Ajustar el tamaño de fuente en pantallas más grandes */
+    thead th {
+        font-size: 22px; /* Tamaño de fuente más grande en el encabezado */
+    }
+
+    td {
+        font-size: 20px; /* Tamaño de fuente más grande en las celdas */
+    }
+
+    button {
+        font-size: 18px; /* Tamaño de fuente para botones en pantallas más grandes */
+        padding: 12px 20px; /* Mantener padding en botones más grandes */
+    }
+
+    /* Mantener el carrusel visible en modo escritorio */
+    .carousel-container {
+        display: block; /* Asegura que el carrusel esté visible */
+        overflow-y: auto; /* Permite el desplazamiento vertical */
+    }
+
+    /* Estilo para las filas en modo escritorio */
+    tbody tr {
+        display: table-row; /* Mantiene el comportamiento de fila en modo escritorio */
+    }
+
+    tbody td {
+        display: table-cell; /* Mantiene el comportamiento de celda en modo escritorio */
+    }
+}
+/* Estilo para el título de estado */
+.status-title {
+    text-align: center; /* Centra el título */
+    font-size: 24px; /* Tamaño de fuente */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+    color: #4F4F4F; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Resto de tus estilos */

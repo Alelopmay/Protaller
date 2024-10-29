@@ -1,0 +1,33 @@
+<div class="register-car-form">
+    <h3>Registrar entrada de coche</h3>
+
+    <form (ngSubmit)="registrarCoche()">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" [(ngModel)]="matricula" name="matricula" required>
+
+        <label for="modelo">Modelo:</label>
+        <select id="modelo" [(ngModel)]="modelo" name="modelo" required>
+            <option value="" disabled selected>Selecciona un modelo</option>
+            <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
+        </select>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" [(ngModel)]="estado" name="estado" required>
+
+        <h4>Selecciona un cliente:</h4>
+        <div class="client-carousel">
+            <div class="client" *ngFor="let client of clients" (click)="selectClient(client.id)">
+                {{ client.name }}
+            </div>
+        </div><br>
+
+        <div class="button-container">
+            <button type="submit" class="action-button register-button">Registrar</button><br><br>
+            <button type="button" class="action-button cancel-button" (click)="cancelar()">Cancelar</button>
+        </div>
+    </form>
+
+    <div *ngIf="showSuccessMessage" class="success-message">
+        ¡Coche registrado exitosamente!
+    </div>
+</div>

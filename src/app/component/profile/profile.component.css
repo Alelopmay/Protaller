@@ -1,0 +1,60 @@
+/* profile.component.css */
+.profile-container {
+    display: flex; /* Flexbox para alinear horizontalmente la imagen y el texto */
+    align-items: center; /* Centrar verticalmente */
+    margin: 0 15px; /* Espaciado lateral para evitar que quede pegado */
+    padding: 5px; /* Espaciado interno reducido para adaptarse al nav */
+    background-color: #3b3a3a; /* Fondo oscuro */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Suaviza el cambio de fondo */
+}
+
+.profile-photo {
+    width: 40px; /* Tamaño de la imagen para alinearse con la nav */
+    height: 40px; /* Altura de la imagen */
+    border-radius: 50%; /* Para que sea un círculo */
+    border: 2px solid #cacaca; /* Bordes azul para resaltar la foto */
+    margin-right: 10px; /* Espaciado entre la foto y el texto */
+    transition: transform 0.3s; /* Suaviza el efecto de hover */
+}
+
+.profile-photo:hover {
+    transform: scale(1.1); /* Aumenta ligeramente la imagen al pasar el mouse */
+}
+
+.profile-info {
+    text-align: left; /* Alinear texto a la izquierda */
+    flex-grow: 1; /* Para que el contenedor de la información ocupe el espacio disponible */
+}
+
+h2 {
+    margin: 0; /* Eliminar margen superior */
+    font-size: 1rem; /* Tamaño de fuente ajustado para alinearse con la nav */
+    color: #ffffff; /* Color del nombre blanco para mejor visibilidad */
+    font-weight: bold; /* Hacer el nombre más prominente */
+}
+
+.role {
+    margin: 0; /* Eliminar margen */
+    color: #dddddd; /* Color del rol más claro */
+    font-style: italic; /* Estilo del texto del rol */
+    font-size: 0.875rem; /* Tamaño de fuente más pequeño para el rol */
+}
+
+/* Efecto hover en el contenedor */
+.profile-container:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Color de fondo sutil al pasar el mouse */
+}
+
+/* Estilo para el icono de ajustes */
+.settings-icon {
+    margin-left: 10px; /* Espaciado entre el perfil y el icono */
+    color: #ffffff; /* Color del icono */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    font-size: 1.2rem; /* Tamaño del icono */
+    transition: transform 0.3s; /* Suaviza el efecto de hover */
+}
+
+.settings-icon:hover {
+    transform: scale(1.2); /* Aumenta el icono al pasar el mouse */
+}

@@ -1,0 +1,171 @@
+.form-file-container {
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 20px auto; /* Centrado automático en la página */
+  padding: 20px; /* Espaciado interno */
+  border: 4px solid #fff; /* Borde blanco más grueso */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  background: linear-gradient(145deg, #333, #444); /* Degradado de fondo */
+  color: #fff; /* Color del texto */
+  position: relative; /* Para posicionar elementos dentro */
+}
+
+h2 {
+  text-align: center; /* Centrado del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  color: #fff; /* Color blanco para el encabezado */
+}
+
+.form-group {
+  margin-bottom: 25px; /* Espacio entre grupos de campos */
+}
+
+label {
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+  color: #fff; /* Color blanco para las etiquetas */
+}
+
+input[type="date"],
+input[type="text"],
+textarea,
+select {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  border: none; /* Sin borde por defecto */
+  border-bottom: 2px solid #fff; /* Borde inferior blanco */
+  border-radius: 0; /* Sin bordes redondeados */
+  background-color: transparent; /* Fondo transparente */
+  color: #fff; /* Color blanco para el texto */
+  transition: border-color 0.3s; /* Transición para el color del borde */
+  box-shadow: none; /* Sin sombra */
+  font-size: 1em; /* Tamaño de fuente base */
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none; /* Sin contorno en el enfoque */
+  border-bottom: 2px solid #007bff; /* Cambia el color del borde al enfocar */
+}
+
+textarea {
+  resize: vertical; /* Permitir redimensionar solo verticalmente */
+  min-height: 100px; /* Altura mínima del textarea */
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente translúcido */
+}
+
+button {
+  background-color: #007bff; /* Color del botón de enviar */
+  color: white; /* Color del texto en el botón */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 25px; /* Bordes cilíndricos */
+  cursor: pointer; /* Cambia el cursor a mano */
+  transition: background-color 0.3s, transform 0.2s; /* Efecto al pasar el ratón */
+  width: 100%; /* Botones más largos */
+  max-width: 180px; /* Ancho máximo para los botones */
+  margin: 15px 0; /* Espacio entre botones */
+  position: relative; /* Para el efecto de brillo */
+  z-index: 2; /* Para asegurar que estén encima del fondo */
+}
+
+.btn-submit {
+  background-color: #28a745; /* Color verde para el botón de crear */
+}
+
+.btn-cancel {
+  background-color: #dc3545; /* Color rojo para el botón de cancelar */
+}
+
+button:hover {
+  opacity: 0.9; /* Efecto al pasar el ratón */
+  transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+button:disabled {
+  background-color: #aaa; /* Color para botones deshabilitados */
+}
+
+.button-group {
+  display: flex; /* Usar flexbox para alinear botones */
+  flex-direction: column; /* Cambiar la dirección a columna */
+  align-items: center; /* Centrar los botones */
+  margin-top: 20px; /* Espacio arriba de los botones */
+}
+
+.employee-list {
+  list-style: none; /* Sin estilo de lista */
+  padding: 0; /* Sin relleno */
+  margin: 10px 0; /* Espacio alrededor de la lista */
+  border-radius: 5px; /* Bordes redondeados para la lista */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente translúcido */
+  max-height: 200px; /* Altura máxima de la lista */
+  overflow-y: auto; /* Desplazamiento vertical si hay más elementos */
+}
+
+.employee-list li {
+  padding: 15px; /* Mayor espacio interno */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde suave */
+  margin-bottom: 5px; /* Espacio entre elementos de la lista */
+  cursor: pointer; /* Cambia el cursor a mano */
+  transition: background-color 0.3s ease, transform 0.2s; /* Animaciones suaves */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1.1em; /* Aumentar el tamaño de fuente */
+  display: flex; /* Flexbox para la alineación */
+  justify-content: space-between; /* Espacio entre el texto y el icono */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.employee-list li:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Color de fondo al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.employee-list li.selected {
+  background-color: rgba(76, 175, 80, 0.5); /* Color de fondo para empleados seleccionados */
+  border-color: #4CAF50; /* Color del borde para el elemento seleccionado */
+  font-weight: bold; /* Hacer el texto más prominente */
+}
+
+.employee-list li.selected:hover {
+  background-color: rgba(76, 175, 80, 0.7); /* Color al pasar el ratón sobre un seleccionado */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 600px) {
+  .form-file-container {
+    padding: 15px; /* Ajuste del espaciado interno en pantallas pequeñas */
+  }
+
+  button {
+    padding: 10px; /* Ajuste del tamaño del botón */
+  }
+
+  .employee-list li {
+    padding: 10px; /* Ajuste del espaciado interno en la lista */
+    font-size: 1em; /* Tamaño de fuente más pequeño */
+  }
+}
+.alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

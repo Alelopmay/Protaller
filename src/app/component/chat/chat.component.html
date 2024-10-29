@@ -1,0 +1,17 @@
+<div class="chat-container">
+    <div class="chat-header">
+        <h3>Chat con {{ employee?.firstName }} {{ employee?.lastName }}</h3>
+        <button class="close-chat-button" (click)="onCloseChat()" aria-label="Cerrar chat">Cerrar Chat</button>
+    </div>
+
+    <div class="chat-messages">
+        <div *ngFor="let message of messages"
+            [ngClass]="{ 'my-message': currentUser && message.sender.username === currentUser.username }">
+            <span class="message-sender">{{ message.sender.username }}:</span>
+            <span class="message-text">{{ message.content }}</span>
+            <span class="message-date">{{ message.sentAt | date:'short' }}</span> <!-- Cambiar sendDate a sentAt -->
+        </div>
+    </div>
+
+    <input type="text" [(ngModel)]="newMessage" (keydown.enter)="sendMessage()" placeholder="Escribe un mensaje..." />
+</div>

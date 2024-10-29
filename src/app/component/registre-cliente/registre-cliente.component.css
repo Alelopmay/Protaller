@@ -1,0 +1,68 @@
+.client-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #2c2c2c; /* Fondo gris oscuro */
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar volumen */
+}
+
+.client-form h2 {
+    margin-bottom: 20px;
+}
+
+.client-form div {
+    margin-bottom: 15px;
+}
+
+.client-form label {
+    color: #fff; /* Color de texto blanco para las etiquetas */
+}
+
+.client-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Cilíndrico */
+    width: 100%;
+    background-color: #ecf0f1; /* Color claro para los inputs */
+    color: #333;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre botones */
+}
+
+.action-button, .cancel-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px; /* Cilíndrico */
+    cursor: pointer;
+}
+
+.action-button {
+    background: linear-gradient(145deg, #2980b9, #3498db); /* Azul metalizado */
+    color: #fff;
+}
+
+.action-button:hover {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+}
+
+.cancel-button {
+    background: linear-gradient(145deg, #e74c3c, #c0392b); /* Rojo metalizado */
+    color: #fff;
+}
+
+.cancel-button:hover {
+    background: linear-gradient(145deg, #c0392b, #e74c3c);
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #27ae60; /* Verde para mensajes de confirmación */
+    color: white;
+    border-radius: 4px;
+}

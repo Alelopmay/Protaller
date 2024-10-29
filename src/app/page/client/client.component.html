@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+    <div class="sidebar">
+        <h2>Barra de Navegación</h2>
+        <div class="search-section">
+            <h3 class="search-title">Buscador:</h3>
+            <input type="text" placeholder="Buscar por nombre, email o teléfono" class="search-input"
+                [(ngModel)]="searchTerm" (input)="onSearchTermChange()" />
+        </div>
+        <button class="action-button" (click)="showRegisterClientForm()">Registrar nuevo cliente</button>
+        <button class="send-email-button" (click)="openGmail()">Enviar correo</button>
+
+    </div>
+
+    <div class="main-content">
+        <h2>Nº de clientes registrados</h2>
+
+        <!-- Mostrar el formulario de registro de cliente -->
+        <app-registre-cliente *ngIf="isRegisterClientVisible" (cancel)="hideRegisterClientForm()"
+            (register)="onRegisterClient()"></app-registre-cliente>
+
+        <div *ngIf="!isRegisterClientVisible">
+            <p>Aquí puede haber otros elementos o contenido relacionado con los clientes.</p>
+            <!-- Pasar searchTerm al componente list-client -->
+            <app-list-client [searchTerm]="searchTerm"></app-list-client>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showSuccessMessage" class="popup">
+    <p>Cliente registrado correctamente!</p>
+</div>
+
+<footer class="footer">
+    <p>© 2024 Tu Taller. Todos los derechos reservados.</p>
+</footer>

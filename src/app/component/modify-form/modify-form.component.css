@@ -1,0 +1,77 @@
+/* Estilo del modal */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000; /* Asegúrate de que el modal esté encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Agrega scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+    background-color: #393838; /* Color de fondo del modal */
+    margin: 15% auto; /* Margen para centrar el contenido */
+    padding: 20px;
+    border: 1px solid #888; /* Borde del modal */
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Máximo ancho del modal */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilos del botón de cerrar */
+.close {
+    color: #ffffff; /* Color del icono de cerrar */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño del icono */
+    font-weight: bold; /* Negrita */
+}
+
+/* Cambiar color al pasar el mouse */
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255); /* Color del icono cuando se pasa el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+/* Estilos para los campos de formulario */
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    margin: 8px 0; /* Margen arriba y abajo */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Esquinas redondeadas */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* Estilo del botón de guardar */
+button {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    padding: 14px 20px; /* Espaciado interno */
+    margin: 8px 0; /* Margen arriba y abajo */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cursor tipo puntero */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+button:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}
+
+/* Estilos para etiquetas */
+label {
+    font-weight: bold; /* Texto en negrita */
+    margin-top: 10px; /* Espacio encima */
+    display: block; /* Mostrar como bloque para ocupar toda la línea */
+}

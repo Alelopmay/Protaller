@@ -1,0 +1,125 @@
+/* Estilos personalizados para la barra de navegación */
+.navbar {
+  background-color: #333; /* Gris oscuro para el fondo del navbar */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif; /* Tipografía consistente con el resto del sitio */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del contenedor del navbar */
+.container-fluid {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilos del botón de alternancia (toggle) en dispositivos móviles */
+.navbar-toggler {
+  border-color: #fff; /* Color del borde del botón de colapso */
+}
+
+.navbar-toggler-icon {
+  background-color: #383737; /* Color del icono del botón de colapso */
+}
+
+/* Estilos de la marca (brand) */
+.navbar-brand {
+  color: #fff; /* Color blanco para el título */
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  margin-right: 13px; /* Ajusta el margen derecho para mover el título un poco más a la izquierda */
+}
+
+.navbar-brand:hover {
+  color: #3498db; /* Color azul claro para el hover */
+}
+
+/* Estilos de los enlaces de navegación */
+.nav-link {
+  color: #fff; /* Color blanco para los enlaces */
+  font-size: 1.125rem; /* Tamaño de fuente para los enlaces (ligeramente reducido) */
+  margin-left: 15px; /* Espaciado entre los enlaces */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+  padding: 8px 12px; /* Espaciado interno de los enlaces */
+  text-decoration: none; /* Quitar subrayado en los enlaces */
+  display: flex; /* Usar flexbox para alinear íconos y texto */
+  align-items: center; /* Alinear íconos y texto verticalmente */
+}
+
+.nav-link svg {
+  margin-right: 8px; /* Espaciado entre el ícono y el texto */
+  width: 24px; /* Tamaño del ícono aumentado */
+  height: 24px; /* Tamaño del ícono aumentado */
+}
+
+.nav-link:hover {
+  color: #3498db; /* Color azul claro para el hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco ligeramente transparente al pasar el ratón */
+  border-radius: 4px; /* Esquinas redondeadas para el efecto hover */
+}
+
+/* Estilo del enlace de navegación activo (página actual) */
+.nav-link.active {
+  font-weight: bold;
+  color: #3498db; /* Color azul claro para el enlace activo */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco ligeramente transparente para el enlace activo */
+  border-radius: 4px; /* Esquinas redondeadas para el enlace activo */
+}
+
+/* Estilo del botón de cierre de sesión */
+.btn-danger {
+  background-color: #e74c3c; /* Color de fondo del botón de cierre de sesión */
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.875rem; /* Tamaño de fuente para el botón */
+  border-radius: 4px; /* Esquinas redondeadas para el botón */
+}
+
+.btn-danger:hover {
+  background-color: #c0392b; /* Color de fondo al pasar el ratón sobre el botón */
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .setting {
+    margin-left: 135px; /* Ajuste para dispositivos móviles si es necesario */
+  }
+}
+/* Estilos personalizados para la barra de navegación */
+.navbar {
+  background-color: #333; /* Gris oscuro para el fondo del navbar */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif; /* Tipografía consistente con el resto del sitio */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del contenedor del navbar */
+.container-fluid {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 0 15px; /* Espaciado horizontal */
+}
+
+/* Asegúrate que el espacio entre el logo y el botón de cierre de sesión sea adecuado */
+.ml-auto {
+  display: flex;
+  align-items: center; /* Centrar el perfil verticalmente */
+}
+
+/* Estilos de la barra de navegación */
+.nav-link {
+  margin: 0 10px; /* Espaciado horizontal entre enlaces */
+}
+
+/* Asegúrate que no hay padding extra que afecte el diseño */
+.navbar-nav {
+  margin: 0; /* Eliminar márgenes para mantener el diseño compacto */
+}

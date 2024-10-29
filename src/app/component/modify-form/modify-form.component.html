@@ -1,0 +1,30 @@
+<div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+        <!-- Botón de cerrar -->
+        <span class="close" (click)="closeModal()">&times;</span>
+
+        <h2>Modificar Formulario</h2>
+
+        <form (ngSubmit)="onSubmit()">
+            <label for="description">Descripción</label>
+            <input type="text" id="description" [(ngModel)]="formData.description" name="description" required />
+
+            <label for="date">Fecha</label>
+            <input type="date" id="date" [(ngModel)]="formData.date" name="date" required />
+
+            <label for="initialDiagnosis">Diagnóstico Inicial</label>
+            <textarea id="initialDiagnosis" [(ngModel)]="formData.initialDiagnosis" name="initialDiagnosis"
+                required></textarea>
+
+            <label for="inspectionResults">Resultados de la Inspección</label>
+            <textarea id="inspectionResults" [(ngModel)]="formData.inspectionResults" name="inspectionResults"
+                required></textarea>
+
+            <label for="workPerformed">Trabajo Realizado</label>
+            <textarea id="workPerformed" [(ngModel)]="formData.workPerformed" name="workPerformed" required></textarea>
+
+            <!-- Botón de guardar -->
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</div>

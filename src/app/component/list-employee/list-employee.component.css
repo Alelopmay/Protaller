@@ -1,0 +1,125 @@
+/* src/app/component/list-employee/list-employee.component.css */
+
+.employee-list-container {
+  padding: 20px;
+  max-width: 600px; /* Mantiene un ancho razonable */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #343a40;
+  width: 90%; /* Se ajusta el ancho al 90% del contenedor */
+  max-height: 570px; /* Ajusta la altura máxima */
+  overflow: hidden; /* Evita que el contenido se desborde fuera del contenedor */
+  display: flex;
+  flex-direction: column; /* Asegura que el título y la lista estén en columna */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px; /* Reduce el margen inferior para una mejor apariencia */
+  color: #fff;
+}
+
+.employee-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Asegúrate de que no haya margen */
+  overflow-y: auto; /* Permite que la lista sea desplazable */
+  flex: 1; /* Hace que la lista ocupe el espacio restante */
+}
+
+.employee-item {
+  display: flex;
+  flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
+  padding: 15px; /* Aumenta el padding para más espacio */
+  border-bottom: 1px solid #555;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  font-size: 16px; /* Aumenta el tamaño de la fuente */
+}
+
+.employee-item:last-child {
+  border-bottom: none;
+}
+
+.employee-item:hover {
+  background-color: #4c545c;
+}
+
+.employee-details {
+  display: flex;
+  align-items: center;
+}
+
+.employee-photo {
+  width: 70px; /* Aumenta el tamaño de la foto */
+  height: 70px; /* Aumenta el tamaño de la foto */
+  border-radius: 50%;
+  margin-right: 15px; /* Mayor espacio entre la foto y el texto */
+  border: 2px solid #007bff;
+}
+
+.employee-info {
+  flex: 1;
+  color: #fff;
+}
+
+.employee-actions {
+  display: flex;
+  flex-direction: row; /* Mantiene el diseño en fila en pantallas más grandes */
+  gap: 15px; /* Espacio mayor entre los botones */
+}
+
+.action-button {
+  padding: 12px 25px; /* Aumenta el padding para botones más grandes */
+  border: none;
+  border-radius: 30px; 
+  cursor: pointer;
+  font-size: 16px; /* Aumenta el tamaño de la fuente */
+  color: #fff;
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+.chat-button {
+  background: linear-gradient(90deg, #007bff, #0056b3); 
+}
+
+.delete-button {
+  background: linear-gradient(90deg, #dc3545, #b02a37); 
+}
+
+.task-button {
+  background: linear-gradient(90deg, #28a745, #218838); 
+}
+
+.action-button:hover {
+  transform: scale(1.05);
+}
+
+.no-employees {
+  text-align: center;
+  margin-top: 20px;
+  color: #888; 
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 600px) {
+  .employee-item {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+  
+  .employee-actions {
+    flex-direction: column; /* Botones apilados en pantallas pequeñas */
+    gap: 5px; /* Espacio reducido entre botones */
+  }
+  
+  .employee-details {
+    flex-direction: column; /* Detalles en columna */
+    align-items: flex-start; /* Alinea a la izquierda */
+  }
+  
+  .employee-photo {
+    margin-bottom: 10px; /* Margen inferior para la foto */
+  }
+}

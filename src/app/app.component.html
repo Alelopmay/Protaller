@@ -1,0 +1,6 @@
+<!-- AppComponent.html -->
+<app-nav *ngIf="showNav" (toggleAjust)="toggleAjust()"></app-nav> <!-- Escuchamos el evento toggleAjust -->
+
+<app-ajust *ngIf="showAjust" (closeNav)="closeNav()"></app-ajust> <!-- Escucha el evento closeNav -->
+
+<router-outlet></router-outlet>

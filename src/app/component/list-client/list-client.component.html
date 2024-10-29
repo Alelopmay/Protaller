@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Lista de Clientes</h1>
+    <div class="client-list-container">
+        <div class="client-list">
+            <div class="client-list-inner">
+                <div *ngFor="let client of filteredClients" class="client-card">
+                    <h3>{{ client.name }}</h3>
+                    <p>Teléfono: {{ client.phoneNumber || 'No disponible' }}</p>
+                    <p>Email: {{ client.email || 'No disponible' }}</p>
+                    <div class="button-group">
+                        <button class="btn delete" (click)="deleteClient(client.id)">Eliminar</button>
+                        <button class="btn list-cars" (click)="listCars(client.id)">Listar Autos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="filteredClients.length === 0" class="no-clients">
+            <p>No hay clientes disponibles.</p>
+        </div>
+    </div>
+
+    <!-- Modal de coches -->
+    <div *ngIf="showCarModal" class="car-modal">
+        <div class="modal-content">
+            <h2>Lista de Coches de el cliente</h2>
+            <ul>
+                <li *ngFor="let car of cars" (click)="onCarClick(car.licensePlate)">
+                    <p>Matrícula: {{ car.licensePlate || 'No disponible' }}</p>
+                    <p>Modelo: {{ car.model || 'No disponible' }}</p>
+                    <p>Condición: {{ car.carCondition || 'No disponible' }}</p>
+                </li>
+            </ul>
+            <button (click)="closeCarModal()" class="btn close-modal">Cerrar</button>
+        </div>
+    </div>
+</div>

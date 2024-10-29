@@ -1,0 +1,140 @@
+/* General Container for InfoForClient */
+.background {
+    background-color: #444444;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #333; /* Consistente con el fondo de la página */
+    color: #fff; /* Texto blanco para contraste */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    max-width: 600px; /* Max-width para contener el contenido */
+    width: 100%; /* Asegurar que el ancho sea del 100% en pantallas pequeñas */
+    margin: 20px auto; /* Centrar en la página */
+    box-sizing: border-box; /* Incluir el padding en el ancho total */
+}
+
+/* Title */
+.info-title {
+    font-size: 2.5rem; /* Tamaño de fuente grande */
+    color: #ddd; /* Color gris metálico claro */
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.4);
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+.info-subtitle {
+    font-size: 1.8rem; /* Tamaño de fuente para subtítulo */
+    color: #ccc; /* Color gris claro */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que el input use el ancho completo */
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #444; /* Fondo oscuro */
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #17a2b8; /* Color de borde al enfocar */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.25);
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.alert-info {
+    background-color: #d1ecf1; /* Color de fondo para alertas informativas */
+    color: #0c5460; /* Color del texto */
+}
+
+.alert-warning {
+    background-color: #fff3cd; /* Color de fondo para alertas de advertencia */
+    color: #856404; /* Color del texto */
+}
+
+/* Button */
+.btn-primary {
+    background-color: #17a2b8; /* Color de fondo del botón */
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Hacer que el botón ocupe todo el ancho */
+}
+
+.btn-primary:hover {
+    background-color: #138496; /* Color de fondo al pasar el cursor */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .info-title {
+        font-size: 2rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .info-subtitle {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .form-control {
+        padding: 10px; /* Ajustar padding en inputs */
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+
+    .btn-primary {
+        padding: 10px; /* Ajustar padding en el botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .info-title {
+        font-size: 1.8rem; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .info-subtitle {
+        font-size: 1.2rem; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .form-control {
+        padding: 8px; /* Ajustar padding en inputs */
+        font-size: 0.8rem; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .btn-primary {
+        padding: 8px; /* Ajustar padding en el botón */
+    }
+}

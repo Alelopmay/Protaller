@@ -1,0 +1,65 @@
+<div class="background">
+    <div class="container">
+        <br><br><br>
+        <h1>Información del coche</h1>
+
+        <div *ngIf="carData">
+            <p><strong>Matrícula:</strong> {{ carData.licensePlate }}</p>
+            <p><strong>Modelo:</strong> {{ carData.model }}</p>
+            <p><strong>Condición:</strong> {{ carData.carCondition }}</p>
+        </div>
+
+        <!-- Sección de información del cliente -->
+        <div *ngIf="client">
+            <h2>Información del Cliente</h2>
+            <p><strong>Nombre:</strong> {{ client.name }}</p>
+            <p><strong>Teléfono:</strong> {{ client.phoneNumber }}</p>
+            <p><strong>Correo Electrónico:</strong> {{ client.email }}</p>
+        </div>
+
+        <!-- Form section - Carrusel Vertical -->
+        <div class="forms-section metallic">
+            <h3>Formularios:</h3>
+            <div class="carousel-container">
+                <ul class="carousel">
+                    <li class="form-item" *ngFor="let form of forms">
+                        <p><strong>Descripción:</strong> {{ form.description }}</p>
+                        <p><strong>Fecha:</strong> {{ form.date }}</p>
+                        <p><strong>Diagnóstico Inicial:</strong> {{ form.initialDiagnosis }}</p>
+                        <p><strong>Resultados de Inspección:</strong> {{ form.inspectionResults }}</p>
+                        <p><strong>Trabajo Realizado:</strong> {{ form.workPerformed }}</p>
+                        <div class="form-actions">
+                            <button class="modify-button" (click)="modifyForm(form)">Modificar</button>
+                            <button class="info-button" (click)="viewMoreInfo(form)">Ver más información</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Invoice Section - Carrusel Vertical -->
+        <div class="invoices-section metallic">
+            <h3>Facturas:</h3>
+            <div class="carousel-container">
+                <ul class="carousel">
+                    <li class="invoice-item" *ngFor="let invoice of invoices">
+                        
+                        <p><strong>Fecha de Emisión:</strong> {{ invoice.issueDate | date:'dd/MM/yyyy' }}</p>
+                        <p><strong>Subtotal:</strong> {{ invoice.subtotal | currency }}</p>
+                        <p><strong>IVA:</strong> {{ invoice.vat | currency }}</p>
+                        <p><strong>Total:</strong> {{ invoice.total | currency }}</p>
+                        <p><strong>Método de Pago:</strong> {{ invoice.paymentMethod }}</p>
+                        <p><strong>Garantía:</strong> {{ invoice.warranty }}</p>
+                        <div class="invoice-actions">
+                            <button class="modify-button" (click)="modifyInvoice(invoice)">Modificar</button>
+                            <button class="print-button" (click)="printInvoice(invoice)">Imprimir</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<app-modify-form *ngIf="showModifyModal && selectedForm" [formData]="selectedForm!" (save)="onSaveForm($event)">
+</app-modify-form>
+
+</div>

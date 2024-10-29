@@ -1,0 +1,129 @@
+/* Contenedor de la lista de coches */
+.car-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal */
+.car-list-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Estilo de cada tarjeta de coche */
+.car-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Más espacio entre elementos */
+    transition: transform 0.2s ease;
+}
+
+/* Título de cada coche */
+.car-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;  /* Mayor espacio bajo el título */
+    color: #333;
+}
+
+/* Texto de información del coche */
+.car-card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Estilo para los botones */
+.car-actions {
+    margin-top: 20px; /* Más espacio sobre los botones */
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; /* Mayor separación entre botones */
+}
+
+.btn {
+    padding: 12px 18px; /* Botones más grandes */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    text-align: center;
+}
+
+/* Botón de "Ver Informes" */
+.btn-form {
+    background-color: #6c757d; /* Color gris para el botón de informes */
+    border: 2px solid #5a6268; /* Borde para darle más peso visual */
+}
+
+.btn-form:hover {
+    background-color: #5a6268; /* Oscurecer el gris al hacer hover */
+    transform: translateY(-2px); /* Leve elevación al hacer hover */
+}
+
+/* Botón de "Ver Facturas" */
+.btn-invoice {
+    background-color: #28a745; /* Verde más brillante */
+    border: 2px solid #218838; /* Borde verde más oscuro */
+}
+
+.btn-invoice:hover {
+    background-color: #218838; /* Verde más oscuro al hacer hover */
+    transform: translateY(-2px); /* Leve elevación al hacer hover */
+}
+
+/* Mensaje de no hay coches */
+.no-cars-message {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Sección de informes y facturas */
+.report-section, .invoice-section {
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.report-section h3, .invoice-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+/* Lista de informes y facturas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    margin-bottom: 15px; /* Mayor separación entre elementos */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li p {
+    margin: 7px 0; /* Más espacio entre los textos */
+    font-size: 1.1rem;
+    color: #333;
+}

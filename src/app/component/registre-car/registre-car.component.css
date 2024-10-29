@@ -1,0 +1,146 @@
+/* Contenedor principal para el formulario y la lista de clientes */
+.form-client-container {
+    display: flex; /* Usamos flexbox para alinear el contenido */
+    flex-direction: column; /* Por defecto, en columna para móvil */
+}
+
+/* Estilos del formulario */
+.register-car-form {
+    background-color: #2d2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Aumentar el ancho máximo del formulario */
+    margin: 20px; /* Espacio alrededor del formulario */
+}
+
+/* Para pantallas grandes (PC) */
+@media (min-width: 1025px) {
+    .form-client-container {
+        flex-direction: row; /* Cambiar a fila en modo PC */
+    }
+
+    .register-car-form {
+        flex: 1; /* El formulario ocupa el espacio necesario */
+        margin-right: 20px; /* Espacio entre formulario y lista de clientes */
+    }
+
+    .client-list {
+        flex: 1; /* La lista de clientes ocupa el espacio restante */
+        background-color: #2d2e2e; /* Fondo para la lista */
+        padding: 20px; /* Padding para el contenido de la lista */
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+    .client-list h4 {
+        color: #fff; /* Color del título */
+        margin-bottom: 15px; /* Margen inferior */
+    }
+}
+
+.register-car-form h3 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.register-car-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #fff;
+}
+
+.register-car-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botones con efecto metalizado */
+.register-car-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px; /* Más cilíndricos */
+    cursor: pointer;
+    font-size: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Letras blancas con sombra */
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Sombra 3D */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto metalizado verde para el botón de Registrar */
+.register-button {
+    background: linear-gradient(145deg, #27AE60, #2ECC71, #1E8449); /* Verde metalizado */
+}
+
+.register-button:hover {
+    background: linear-gradient(145deg, #2ECC71, #27AE60, #1E8449); /* Invertir tonos al pasar el ratón */
+    transform: translateY(-2px); /* Elevación ligera */
+}
+
+/* Efecto metalizado rojo para el botón de Cancelar */
+.cancel-button {
+    background: linear-gradient(145deg, #E74C3C, #C0392B, #922B21); /* Rojo metalizado */
+}
+
+.cancel-button:hover {
+    background: linear-gradient(145deg, #C0392B, #E74C3C, #922B21); /* Invertir tonos al pasar el ratón */
+    transform: translateY(-2px); /* Elevación ligera */
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el carrusel de clientes */
+.client-carousel {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    padding: 15px 0; /* Mayor padding vertical para el carrusel */
+    gap: 15px; /* Espacio entre los elementos del carrusel */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* Estilos de cada cliente en el carrusel */
+.client {
+    flex: 0 0 150px; /* Ajusta el ancho de cada cliente */
+    margin: 0; /* Quitar margen externo */
+    padding: 20px; /* Ajustar padding para mayor espacio interno */
+    background-color: #444; /* Fondo para los clientes */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre */
+    transition: background-color 0.3s; /* Transición de color de fondo */
+    text-align: center; /* Centrar el texto */
+    color: #fff; /* Asegúrate de que el texto sea visible */
+    min-width: 150px; /* Asegurar un ancho mínimo para cada elemento */
+}
+
+.client:hover {
+    background-color: #666; /* Color de fondo al pasar el ratón */
+}
+
+/* Para ocultar la barra de desplazamiento en Webkit */
+.client-carousel::-webkit-scrollbar {
+    height: 8px; /* Altura de la barra de desplazamiento */
+}
+
+.client-carousel::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color de la barra de desplazamiento */
+    border-radius: 4px; /* Bordes redondeados de la barra */
+}
+
+.client-carousel::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color de la barra de desplazamiento al pasar el ratón */
+}

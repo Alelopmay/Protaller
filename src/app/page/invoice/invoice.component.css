@@ -1,0 +1,57 @@
+/* Contenedor de la factura */
+.invoice-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9; /* Color de fondo más suave */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Título de la factura */
+.invoice-container h1 {
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333; /* Color del texto */
+  margin-bottom: 20px;
+}
+
+/* Estilo de los párrafos */
+.invoice-container p {
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  margin: 10px 0; /* Espaciado entre párrafos */
+}
+
+/* Estilo para los datos resaltados */
+.invoice-container strong {
+  color: #007bff; /* Color azul para destacar */
+}
+
+/* Botón de imprimir */
+.print-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #28a745; /* Color verde para el botón */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Cambia el color del botón al pasar el mouse */
+.print-button:hover {
+  background-color: #218838; /* Color más oscuro */
+}
+
+/* Oculta el botón de imprimir al imprimir */
+@media print {
+  .print-button {
+    display: none; /* El botón no será visible al imprimir */
+  }
+}

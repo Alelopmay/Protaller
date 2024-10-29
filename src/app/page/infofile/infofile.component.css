@@ -1,0 +1,258 @@
+/* Estilos generales para la página */
+.file-container {
+    background-color: #1a1919;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.file-details-container {
+    margin: 20px auto;
+    padding: 30px; /* Aumentar el padding */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    width: 90%; /* Ancho del contenedor para pantallas pequeñas */
+    background-color: #383737; /* Fondo oscuro general */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; /* Texto en blanco */
+    display: flex; /* Flexbox para centrar */
+    flex-direction: column; /* Centrar en columna */
+    align-items: center; /* Centramos horizontalmente */
+    margin-top: 100px;
+}
+
+.file-details-title {
+    text-align: center;
+    color: #e1e1e1;
+    margin-bottom: 30px; /* Aumentar el margen */
+    font-size: 28px; /* Aumentar el tamaño de fuente */
+    font-weight: bold;
+}
+
+.file-details-card {
+    padding: 30px; /* Aumentar el padding */
+    background-color: #ffffff; /* Fondo de tarjeta claro para simular hoja */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #333; /* Texto en color oscuro para contraste */
+    width: 100%; /* Hacer que la tarjeta ocupe todo el ancho */
+    max-width: 550px; /* Ancho máximo */
+}
+
+.file-details-subtitle {
+    color: #444;
+    margin-bottom: 15px; /* Aumentar el margen */
+    font-size: 22px; /* Aumentar el tamaño de fuente */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 18px; /* Aumentar el tamaño de fuente */
+    margin: 12px 0; /* Aumentar los márgenes */
+    line-height: 1.5;
+}
+
+p strong {
+    color: #2c3e50; /* Color de texto destacado */
+}
+
+.error-message {
+    color: #e74c3c;
+    background-color: #f9ebea;
+    padding: 15px; /* Aumentar padding */
+    border: 1px solid #e74c3c;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px; /* Aumentar tamaño de fuente */
+}
+
+/* Estilos de botones */
+.button-container {
+    display: flex;
+    justify-content: space-around; /* Espacio alrededor de los botones */
+    width: 100%; /* Hacer que el contenedor ocupe todo el ancho */
+    margin-top: 30px; /* Aumentar margen superior */
+}
+
+.btn {
+    padding: 10px 20px; /* Reducción del padding */
+    font-size: 16px; /* Reducción del tamaño de fuente */
+    border: none;
+    border-radius: 25px; /* Bordes más suaves */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 30%; /* Reducción del ancho de los botones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar un efecto metalizado */
+}
+
+.start {
+    background: linear-gradient(90deg, #4caf50, #2e7d32); /* Gradiente verde */
+    color: white;
+}
+
+.start:hover {
+    background: linear-gradient(90deg, #45a049, #2e7d32);
+    transform: scale(1.05);
+}
+
+.finish {
+    background: linear-gradient(90deg, #f44336, #c62828); /* Gradiente rojo */
+    color: white;
+}
+
+.finish:hover {
+    background: linear-gradient(90deg, #e53935, #c62828);
+    transform: scale(1.05);
+}
+
+.archive {
+    background: linear-gradient(90deg, #1984e2, #1565c0); /* Gradiente azul */
+    color: white;
+}
+
+.archive:hover {
+    background: linear-gradient(90deg, #1769aa, #0d47a1);
+    transform: scale(1.05);
+}
+
+/* Cronómetro */
+.timer {
+    margin-top: 20px; /* Aumentar margen superior */
+    font-size: 22px; /* Aumentar tamaño de fuente del cronómetro */
+    color: #000; /* Texto negro para el cronómetro */
+}
+
+/* Estilos para la tarjeta de historial de trabajo */
+.repair-data-container {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.repair-data-card {
+    padding: 20px;
+    background-color: #1e1e1e; /* Fondo más oscuro para la tarjeta */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo del carrusel vertical */
+.repair-carousel {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para un carrusel vertical */
+    overflow-y: auto; /* Habilitar desplazamiento vertical */
+    max-height: 300px; /* Altura máxima del carrusel */
+    gap: 15px; /* Espacio entre los elementos */
+}
+
+.repair-item {
+    background-color: #282828; /* Fondo oscuro para cada elemento del carrusel */
+    color: #ffffff; /* Texto blanco para mejor legibilidad */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.total-hours {
+    margin-top: 15px;
+    font-size: 18px; /* Tamaño de fuente */
+    color: #2980b9; /* Color azul */
+    font-weight: bold; /* Negrita para destacar */
+}
+
+/* Consultas de medios para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .file-details-container {
+        max-width: 90%;
+        padding: 20px; /* Ajustar padding */
+    }
+
+    .file-details-title {
+        font-size: 24px; /* Ajustar tamaño de fuente */
+    }
+
+    .file-details-subtitle {
+        font-size: 20px; /* Ajustar tamaño de fuente */
+    }
+
+    p {
+        font-size: 16px; /* Ajustar tamaño de fuente */
+    }
+
+    .btn {
+        font-size: 16px; /* Ajustar tamaño de fuente de los botones */
+        padding: 8px 16px; /* Ajustar el padding de los botones */
+        width: 100%; /* Botones ocupan el 100% del ancho en móviles */
+        margin-bottom: 10px; /* Espacio entre botones */
+    }
+
+    .button-container {
+        flex-direction: column; /* Cambiar a columna en móviles */
+    }
+
+    .timer {
+        font-size: 20px; /* Ajustar tamaño de fuente del cronómetro */
+    }
+
+    .repair-item {
+        min-width: 100%; /* Ancho completo en móviles */
+    }
+}
+
+/* Consultas de medios para tabletas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .file-details-title {
+        font-size: 26px; /* Ajustar tamaño de fuente */
+    }
+
+    .file-details-subtitle {
+        font-size: 21px; /* Ajustar tamaño de fuente */
+    }
+
+    p {
+        font-size: 17px; /* Ajustar tamaño de fuente */
+    }
+
+    .btn {
+        font-size: 17px; /* Ajustar tamaño de fuente de los botones */
+    }
+
+    .timer {
+        font-size: 21px; /* Ajustar tamaño de fuente del cronómetro */
+    }
+
+    .repair-item {
+        min-width: 180px; /* Ancho mínimo para tabletas */
+    }
+}
+
+/* Consultas de medios para pantallas grandes */
+@media (min-width: 1025px) {
+    .file-details-title {
+        font-size: 32px; /* Tamaño grande para escritorio */
+    }
+
+    .file-details-subtitle {
+        font-size: 24px; /* Tamaño grande para escritorio */
+    }
+
+    p {
+        font-size: 19px; /* Tamaño grande para escritorio */
+    }
+
+    .btn {
+        font-size: 18px; /* Tamaño grande para escritorio */
+    }
+
+    .timer {
+        font-size: 24px; /* Tamaño grande para escritorio */
+    }
+
+    .repair-item {
+        min-width: 220px; /* Ancho mínimo para escritorio */
+    }
+}

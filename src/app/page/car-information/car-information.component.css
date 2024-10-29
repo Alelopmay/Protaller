@@ -1,0 +1,282 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    background-color: #2e2e2e;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 100%; /* Responsivo al ancho del contenedor */
+    margin: 0 auto;
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: #f5f5f5;
+    box-sizing: border-box; /* Padding no afecta el ancho total */
+}
+
+/* Titulares */
+h1 {
+    color: #bdc3c7;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Escala automática basada en la pantalla */
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Sección de carrusel (formularios y facturas) */
+.carousel-container {
+    max-height: 450px;
+    overflow-y: auto;
+    border: 1px solid #7f8c8d;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #5c5c5c;
+    margin-top: 20px;
+    /* Estilo de la barra de desplazamiento */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #7f8c8d #2e2e2e; /* Firefox */
+}
+
+/* Estilos para Webkit (Chrome, Safari, Edge) */
+.carousel-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #7f8c8d;
+    border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+}
+
+
+
+/* Animaciones y estilo de los items */
+.carousel {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel li {
+    background-color: #404040;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid #7f8c8d;
+}
+
+/* Animaciones hover */
+.carousel li:hover {
+    transform: scale(1.03);
+    background-color: #3b3b3b;
+}
+
+/* Acciones de botones en carrusel */
+.form-actions, .invoice-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.modify-button, .print-button, .info-button {
+    background: linear-gradient(145deg, #2c3e50, #7f8c8d);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    flex: 1;
+    min-width: 120px;
+}
+
+.modify-button:hover, .print-button:hover, .info-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Botones individualmente */
+.modify-button {
+    background: linear-gradient(145deg, #2c3e50, #1abc9c); /* Verde metálico */
+}
+
+.modify-button:hover {
+    background: linear-gradient(145deg, #34495e, #16a085);
+}
+
+.print-button {
+    background: linear-gradient(145deg, #2c3e50, #3498db); /* Azul metálico */
+}
+
+.print-button:hover {
+    background: linear-gradient(145deg, #34495e, #2980b9);
+}
+
+.info-button {
+    background: linear-gradient(145deg, #2c3e50, #7f8c8d); /* Gris metálico */
+}
+
+.info-button:hover {
+    background: linear-gradient(145deg, #34495e, #95a5a6);
+}
+
+/* Responsividad */
+/* Estilos para móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .carousel li {
+        padding: 10px;
+    }
+
+    .modify-button, .print-button, .info-button {
+        padding: 12px 15px; /* Botones más grandes */
+        font-size: 1rem; /* Más legibilidad */
+        min-width: 100%; /* Se apilan uno debajo del otro */
+        border-radius: 10px; /* Bordes más suaves */
+        text-align: center;
+    }
+
+    .carousel-container {
+        max-height: 250px;
+    }
+
+    /* Asegurar que las acciones se apilen */
+    .form-actions, .invoice-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+}
+
+/* Estilos para tabletas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2, h3 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .carousel li {
+        padding: 12px;
+    }
+
+    .modify-button, .print-button, .info-button {
+        padding: 12px 15px; /* Botones más grandes */
+        font-size: 1rem; /* Más legibilidad */
+        min-width: 100%; /* Botones apilados */
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .carousel-container {
+        max-height: 350px;
+    }
+
+    /* Asegurar que las acciones se apilen */
+    .form-actions, .invoice-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+}
+
+/* Estilos para escritorio (min-width: 769px) */
+@media (min-width: 769px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, h3 {
+        font-size: 1.7rem;
+    }
+
+    .container {
+        padding: 30px;
+        max-width: 800px;
+    }
+
+    .carousel li {
+        padding: 20px;
+    }
+
+    .modify-button, .print-button, .info-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .carousel-container {
+        max-height: 450px;
+    }
+    
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ecf0f1;
+}

@@ -1,0 +1,35 @@
+<div class="table-container">
+    <div class="button-container">
+        <button (click)="loadFiles(true)">Mostrar tareas finalizadas</button>
+        <button (click)="loadFiles(false)">Mostrar tareas pendientes</button>
+    </div>
+
+    <!-- Título que indica el estado actual de las tareas -->
+    <h2 class="status-title">{{ isActive ? ' Tareas Archivadas' : 'Tareas Pendientes' }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Reporte</th>
+                <th>Nombre del Cliente</th>
+                <th>Placa del Coche</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let file of files">
+                <td>{{ file.date | date }}</td>
+                <td>{{ file.report }}</td>
+                <td>{{ file.clientName }}</td>
+                <td>{{ file.carLicensePlate }}</td>
+                <td>
+                    <button class="work" (click)="workOnFile(file)">Trabajar</button>
+                </td>
+            </tr>
+            <tr *ngIf="files.length === 0">
+                <td colspan="5">No se encontraron archivos.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

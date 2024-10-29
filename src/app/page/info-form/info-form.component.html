@@ -1,0 +1,23 @@
+<div *ngIf="formDetails" class="background" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
+    <div class="container metallic-form">
+        <h2>Detalles del Formulario de Reparación</h2>
+        <p><strong>Descripción:</strong> {{ formDetails.description }}</p>
+        <p><strong>Fecha:</strong> {{ formDetails.date | date:'dd/MM/yyyy' }}</p>
+        <p><strong>Diagnóstico Inicial:</strong> {{ formDetails.initialDiagnosis }}</p>
+        <p><strong>Resultados de Inspección:</strong> {{ formDetails.inspectionResults }}</p>
+        <p><strong>Trabajo Realizado:</strong> {{ formDetails.workPerformed }}</p>
+
+        <h3>Fotos del Vehículo</h3>
+        <div *ngIf="photos.length > 0; else noPhotos" class="photos-container">
+            <div *ngFor="let photo of photos" class="photo-item">
+                <!-- Usa la función getFullPhotoUrl para obtener la URL completa -->
+                <img [src]="getFullPhotoUrl(photo.url)" alt="Foto del vehículo" class="photo">
+
+
+            </div>
+        </div>
+        <ng-template #noPhotos>
+            <p>No hay fotos disponibles para este formulario.</p>
+        </ng-template>
+    </div>
+</div>

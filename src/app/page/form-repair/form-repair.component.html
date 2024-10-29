@@ -1,0 +1,55 @@
+<div class="background">
+    <div class="paper">
+        <h1>Formulario de Reparación</h1>
+
+        <!-- Mostrar el mensaje de éxito si formSuccessMessage está presente -->
+        <div *ngIf="formSuccessMessage" class="success-message">
+            <p>{{ formSuccessMessage }}</p>
+        </div>
+
+        <!-- Formulario de reparación y fotos fusionado -->
+        <form [formGroup]="formRepair" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" formControlName="description" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Fecha</label>
+                <input type="text" id="date" formControlName="date" [value]="currentDate" readonly />
+            </div>
+
+            <div class="form-group">
+                <label for="initialDiagnosis">Diagnóstico Inicial</label>
+                <textarea id="initialDiagnosis" formControlName="initialDiagnosis" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="inspectionResults">Resultados de la Inspección</label>
+                <textarea id="inspectionResults" formControlName="inspectionResults" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="workPerformed">Trabajo Realizado</label>
+                <textarea id="workPerformed" formControlName="workPerformed" rows="3" required></textarea>
+            </div>
+
+            <!-- Sección para subir fotos con Capacitor -->
+            <div class="photo-upload-section">
+                <h2>Subir Fotos</h2>
+                <div class="form-group">
+                    <label for="photoFile">Selecciona fotos (puedes seleccionar varias)</label>
+                    <input type="file" id="photoFile" (change)="onFileChange($event)" accept="image/*" multiple />
+                </div>
+            
+                <!-- Mostrar miniaturas de las fotos seleccionadas -->
+                <div *ngFor="let photo of photos">
+                    <img [src]="photo" alt="Foto" style="width: 100px; height: 100px;" />
+                </div>
+            </div>
+
+
+            <button type="submit" [disabled]="formRepair.invalid || isSubmitting">Enviar</button>
+        </form>
+    </div>
+</div>

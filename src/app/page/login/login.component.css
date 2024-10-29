@@ -1,0 +1,208 @@
+/* Header Top (App Title) */
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(145deg, #3a3a3a, #6e6e6e); /* Gradient for metallic effect */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Shadow for 3D effect */
+    z-index: 1000;
+}
+
+.app-title {
+    font-size: 2.5rem; /* Larger font size */
+    color: #ddd; /* Light metallic gray color */
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -1px -1px 5px rgba(255, 255, 255, 0.4); /* 3D shadow effect */
+}
+
+/* General Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #333;
+    padding: 20px;
+    margin-top: 100px; /* Space for the header */
+}
+
+/* Header */
+.header {
+    background: linear-gradient(145deg, #3d3d3d, #6d6d6d);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-family: 'Helvetica', sans-serif;
+    animation: accelerate 2s ease-in-out infinite;
+}
+
+@keyframes accelerate {
+    0% { letter-spacing: 3px; }
+    50% { letter-spacing: 5px; }
+    100% { letter-spacing: 3px; }
+}
+
+/* Login Content */
+.login-content {
+    display: flex;
+    background-color: #777676;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(8, 8, 8, 0.8);
+}
+
+/* Left Side (Image) */
+.login-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d0c0cf8;
+}
+
+.login-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+/* Right Side (Form) */
+.login-right {
+    flex: 1;
+    padding: 40px;
+    background-color: #222;
+    color: #fff;
+}
+
+.login-right h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #17a2b8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(23, 162, 184, 0.25);
+}
+
+/* Button */
+.btn-primary {
+    background-color: #17a2b8;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #138496;
+}
+
+/* Create Company Link */
+.create-company {
+    margin-top: 20px;
+}
+
+.create-link {
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+.create-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-content {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .login-left, .login-right {
+        width: 100%;
+    }
+
+    .login-right {
+        padding: 20px;
+    }
+
+    .header {
+        display: none; /* Hide the header on tablets and mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .login-right h2 {
+        font-size: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .login-right {
+        padding: 15px;
+    }
+    .alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+}

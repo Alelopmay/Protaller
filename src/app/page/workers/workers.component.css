@@ -1,0 +1,188 @@
+/* General Styles */
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - 60px); /* Altura total menos navbar */
+    margin-top: 60px; /* Margen para la navbar */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(29, 29, 29);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+/* Botones de acción */
+.action-button, .dropdown-button {
+    background: linear-gradient(145deg, #5cb85c, #4cae4c); 
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px; 
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover, .dropdown-button:hover {
+    background: linear-gradient(145deg, #4cae4c, #5cb85c); 
+}
+
+/* Estilo del campo de búsqueda */
+.search-input {
+    width: 250px; /* Ajusta el ancho como prefieras */
+    padding: 10px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados para un estilo cilíndrico */
+    background-color: #ffffff; /* Color de fondo del buscador */
+    color: rgb(0, 0, 0); /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Efecto de transición */
+}
+
+/* Efecto al enfocar el campo de búsqueda */
+.search-input:focus {
+    outline: none; /* Eliminar el contorno predeterminado */
+    background-color: #ffffff; /* Cambiar el color de fondo al enfocar */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Sombra al enfocar */
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;  
+    padding: 0; /* Eliminar el padding */
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    background-color: #262627;
+    padding: 20px;
+    min-width: 250px;
+    height: 100%;  
+    overflow-y: auto;
+}
+
+/* Divider */
+.divider {
+    width: 2px;
+    background-color: white;
+    height: 100%;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    background-color: #262627;
+    padding: 20px;
+    height: 100%; 
+    overflow-y: auto; 
+}
+
+/* Ajustes para eliminar el espacio en pantallas pequeñas y tabletas */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Asegúrate de que las secciones se apilen */
+        padding: 0; /* Eliminar padding */
+    }
+
+    .left-section, .right-section {
+        flex: 1; /* Asegúrate de que ocupen el 100% del ancho */
+        width: 100%; /* Asegurar que ocupen el ancho completo */
+        padding: 10px; /* Ajustar padding para mayor espacio interno */
+        margin: 0; /* Asegurar que no haya márgenes */
+        height: auto; /* Ajustar altura automáticamente */
+        min-height: 300px; /* Altura mínima para garantizar un buen diseño */
+    }
+
+    /* Espaciado adicional entre las secciones */
+    .main-content {
+        gap: 20px; /* Espacio entre las secciones en modo móvil */
+    }
+
+    .divider {
+        display: none; /* Ocultar el divisor en pantallas pequeñas */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar {
+        justify-content: center;
+        padding: 5px 10px;
+    }
+
+    .left-section, .right-section {
+        flex-basis: 50%; /* Ajustar en pantallas medianas */
+        margin: 0 10px; /* Agregar margen lateral para separar las secciones */
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%; /* Asegúrate de que la barra de búsqueda ocupe el ancho completo */
+        padding: 12px; /* Espaciado interno para la barra de búsqueda */
+    }
+
+    .left-section, .right-section {
+        flex-basis: 100%; /* Ocupa toda la anchura en pantallas pequeñas */
+        margin: 0; /* Asegurar que no haya márgenes */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .action-button, .dropdown-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Aumentar el tamaño de los recuadros en móviles */
+    .left-section, .right-section {
+        padding: 20px; /* Aumentar padding para un mejor espacio visual */
+        min-height: 300px; /* Establecer altura mínima para que los elementos sean visibles */
+        margin-bottom: 20px; /* Espacio adicional entre los recuadros */
+    }
+}
